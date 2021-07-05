@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class Station_Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static bool setTimer;
     void Start()
-    {
-
+    {        
+        setTimer = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
-
+       
     }
 
-    public void OnCollisionEnter(Collision collision)//si collisiona con...
+    public void OnTriggerEnter(Collider collision)//si collisiona con...
     {
-        if (collision.other)
+        if (collision.gameObject.CompareTag("Patient"))
         {
-
+            transform.gameObject.tag = "Occupied";
+            setTimer = true;
         }
     }
 
+    public void OnTriggerExit(Collider collision)//si collisiona con...
+    {
+        if (collision.gameObject.CompareTag("Patient"))
+        {
+            transform.gameObject.tag = "Available";
+        }
+    }
+    
 }

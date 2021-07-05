@@ -5,22 +5,13 @@ using UnityEngine.AI;
 
 public class Patient_Controller : MonoBehaviour
 {
-    //public GameObject reception;
-    //public GameObject testation;
-    //public GameObject vaccination;
     public List<GameObject> stations;
     private NavMeshAgent patient;
-    public  bool reception_occupied;
-    public  bool testation_occupied;
-    public  bool vaccination_occupied;
     public float timer;
     public int cont_station = 0;
     void Start()
     {
-        reception_occupied = false;
-        testation_occupied = false;
-        vaccination_occupied = false;
-        timer = 5f;
+        timer = 0;
         patient = GetComponent<NavMeshAgent>();
     }
 
@@ -28,67 +19,40 @@ public class Patient_Controller : MonoBehaviour
     void Update()
     {
         NextStation();
+        SetTimer();
     }
 
     private void NextStation()
-    {
-        if(reception_occupied == false && cont_station == 0)
+    { 
+        if(stations[cont_station].CompareTag("Available"))
         {
             patient.SetDestination(stations[cont_station].transform.position);
-            if(reception_occupied == true)
-            {
-                timer -= Time.deltaTime;
-            }
-            if (timer <= 0)
-            {
-                timer = 5;
-                cont_station++;
-            }
+            patient.isStopped = false;
         }
-        if(testation_occupied == false && cont_station == 1)
-        {
-            patient.SetDestination(stations[cont_station].transform.position);
-            reception_occupied = false;
+        else
+        { 
+            patient.isStopped = true;
         }
-        if (vaccination_occupied == false && cont_station == 2)
+
+        if(cont_station > stations.Count)
         {
-            patient.SetDestination(stations[cont_station].transform.position);
+            Destroy(this.gameObject);
         }
     }
 
-    public void OnCollisionEnter(Collision collision)//si collisiona con...
+    private void SetTimer()
     {
-        if (collision.gameObject.CompareTag("Reception"))
+        if (Station_Controller.setTimer == true && timer < 3)
         {
-            reception_occupied = true;
-            Debug.Log("Paciente en Recepción");
+            timer += Time.deltaTime;            
+        }
+        if (timer >= 3 && cont_station <= stations.Count)
+        {
+            timer = 0;
+            Station_Controller.setTimer = false;
+            cont_station++;
         }
 
-        if (collision.gameObject.CompareTag("Testation"))
-        {
-            testation_occupied = true;
-            //timer -= Time.deltaTime;
-            //if (timer <= 0)
-            //{
-            //    testation_occupied = false;
-            //    timer = 5;
-            //    cont_station++;
-            //}
-            Debug.Log("Paciente en Testation");
-        }
-
-        if (collision.gameObject.CompareTag("Vaccination"))
-        {
-            vaccination_occupied = true;
-            //timer -= Time.deltaTime;
-            //if (timer <= 0)
-            //{
-            //    vaccination_occupied = false;
-            //    timer = 5;
-            //    cont_station++;
-            //}
-            Debug.Log("Paciente en Vaccination");
-        }
     }
 
 }

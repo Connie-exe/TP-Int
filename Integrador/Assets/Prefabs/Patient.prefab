@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5530968517625100873}
   m_Layer: 0
   m_Name: Patient
-  m_TagString: Untagged
+  m_TagString: Patient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,11 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stations:
-  - {fileID: 6970130759034891966, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
-  - {fileID: 2671160410010337637, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
-  - {fileID: 2004652018419969940, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  reception_occupied: 0
-  testation_occupied: 0
-  vaccination_occupied: 0
+  - {fileID: 9213182871727140860, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
+  - {fileID: 3259398949379661097, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
+  - {fileID: 8569300232246554100, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
   timer: 0
   cont_station: 0
