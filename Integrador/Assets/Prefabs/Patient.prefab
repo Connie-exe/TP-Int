@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8554656736060153401}
   - component: {fileID: 9088033007541709336}
   - component: {fileID: 2384340938236632269}
-  - component: {fileID: -5530968517625100873}
+  - component: {fileID: 2468027504845423950}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Patient
@@ -135,7 +135,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-5530968517625100873
+--- !u!114 &2468027504845423950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,9 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db488843704a7154abb1f0feb61b4a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  waitTime: 0
+  startTime: 3
   stations:
-  - {fileID: 9213182871727140860, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
-  - {fileID: 3259398949379661097, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
-  - {fileID: 8569300232246554100, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  timer: 0
+  - {fileID: 9213182871727140856, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
+  - {fileID: 3259398949379661093, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
+  - {fileID: 8569300232246554104, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
+  - {fileID: 2794286160771233, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
+  _waitingRoom: {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7,
+    type: 3}
   cont_station: 0
