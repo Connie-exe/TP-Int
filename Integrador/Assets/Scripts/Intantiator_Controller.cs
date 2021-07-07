@@ -23,7 +23,7 @@ public class Intantiator_Controller : MonoBehaviour
 
     private void SpawnPatients()
     {
-        if (timer <= 0 && cont <= 4)//si timer es menor o igual a 0
+        if (timer <= 0)//si timer es menor o igual a 0
         {
             float offsetX = instantiatePos.transform.position.x;//se declara un float offsetX que es igual a la posición de la posición del instantiatePos en el eje x en unity
             int rnd = UnityEngine.Random.Range(0, patients.Count);//se declara un int (rnd) que genera un número random entre 0 y el número máximo de pacientes que hay en la lista patients
