@@ -10,7 +10,7 @@ public class MoneySystem : MonoBehaviour
 
     public static int cant_founds = 1000;
     public static int cant_cured = 0;
-    public static int cant_vac = 15;
+    public static int cant_vac = 1;
     void Start()
     {
         txt_vaccined.text = "Vaccined " + cant_cured;

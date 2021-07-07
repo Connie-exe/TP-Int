@@ -8,6 +8,10 @@ public class Instructions : MonoBehaviour
     public Text txt_notif;
     public static bool b_covid_notif;
     public GameObject covid_patient;
+
+    public GameObject panel_warning;
+    public Text txt_explanation;
+    private string _explanation;
     //public GameObject arrow;
     //private float offsetX;
     //private bool b_isCreated;
@@ -17,12 +21,16 @@ public class Instructions : MonoBehaviour
         b_covid_notif = false;
         //b_isCreated = false;
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
+
+        panel_warning.SetActive(false);
+        txt_explanation.text = "";
     }
 
     
     void LateUpdate()
     {
         CovidNotif();
+        OutOfVaccines();
         //ArrowPoint();
     }
 
@@ -39,6 +47,17 @@ public class Instructions : MonoBehaviour
         if(covid_patient == false)
         {
             txt_notif.text = "";
+        }
+    }
+
+    public void OutOfVaccines()
+    {
+        if (MoneySystem.cant_vac <= 0)
+        {
+            panel_warning.SetActive(true);
+            _explanation = "You ran out of vaccines, buy some more at the store";
+            txt_explanation.text = "" + _explanation;
+            Time.timeScale = 0f;
         }
     }
 
