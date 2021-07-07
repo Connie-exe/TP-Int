@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class Stations_Controller : MonoBehaviour
 {
-    this.transform.tag = "Available";
+    private void Update()
+    {
+        MakeAvailable();
+    }
+    private void MakeAvailable()
+    {
+        this.transform.tag = "Available";
+    }
 }
