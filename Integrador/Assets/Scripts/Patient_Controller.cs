@@ -7,7 +7,6 @@ public class Patient_Controller : MonoBehaviour
 {
     public float speed;
     public float waitTime;
-    public float startTime;
     private NavMeshAgent patient;
 
     public Transform[] stations;
@@ -16,7 +15,7 @@ public class Patient_Controller : MonoBehaviour
 
     void Start()
     {
-        waitTime = startTime;
+        waitTime = Employees_Controller.startTime;
         patient = GetComponent<NavMeshAgent>();
         //stations
     }
@@ -34,16 +33,11 @@ public class Patient_Controller : MonoBehaviour
             patient.SetDestination(stations[cont_station].transform.position);
             if (Vector2.Distance(patient.transform.position, stations[cont_station].position) < 0.4f)
             {
-                if (cont_station >= stations.Length)
-                {
-                    Destroy(this.gameObject);
-                }
-
                 if (waitTime <= 0)
                 {
                     stations[cont_station].transform.tag = "Available";
                     cont_station++;
-                    waitTime = startTime;
+                    waitTime = Employees_Controller.startTime;
 
                 }
                 else
@@ -63,7 +57,4 @@ public class Patient_Controller : MonoBehaviour
             patient.SetDestination(_waitingRoom.transform.position);
         }
     }
-
-           
-
 }
