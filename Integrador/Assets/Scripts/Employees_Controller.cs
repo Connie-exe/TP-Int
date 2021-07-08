@@ -9,10 +9,15 @@ public class Employees_Controller : MonoBehaviour
     public static int max_Nurse = 3;
     public static float startTime;
 
+    public static int cant_Janitor = 0;
+    public static int max_Janitor = 3;
+
     public Text txt_nurseInfo;
+    public Text txt_JanitorInfo;
     void Start()
     {
         txt_nurseInfo.text = "";
+        txt_JanitorInfo.text = "";
         startTime = 5f;
     }
 
@@ -42,5 +47,10 @@ public class Employees_Controller : MonoBehaviour
     public void NurseInfo()
     {
         txt_nurseInfo.text = cant_Nurse + "/" + max_Nurse;
+    }
+
+    public void JanitorInfo()
+    {
+        txt_JanitorInfo.text = cant_Janitor + "/" + max_Janitor;
     }
 }
