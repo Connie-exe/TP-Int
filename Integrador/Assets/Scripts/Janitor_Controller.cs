@@ -19,6 +19,14 @@ public class Janitor_Controller : MonoBehaviour
         FindClosestAlly();
         FollowingBehaviour();
     }
+
+    public void OnTriggerEnter (Collider other)
+    {
+        if (other.gameObject.CompareTag("Dirt"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
     public GameObject FindClosestAlly()
     {
         GameObject[] gos;
@@ -50,14 +58,6 @@ public class Janitor_Controller : MonoBehaviour
             PatrolBehaviour();
         }
     }
-    public void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Dirt"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
-
     private void PatrolBehaviour()
     {
         janitor.SetDestination(destination);//se pone una destinación mediante el navmesh

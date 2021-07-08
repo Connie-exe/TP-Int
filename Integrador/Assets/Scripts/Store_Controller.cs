@@ -87,8 +87,8 @@ public class Store_Controller : MonoBehaviour
         {
             Employees_Controller.cant_Janitor++;
             MoneySystem.cant_founds -= 450;
-            //Employees_Controller.b_add_janitor = true;
-            //Employees_Controller.cont_janitor_active++;
+            Employees_Controller.b_add_janitor = true;
+            Employees_Controller.cont_janitor_active++;
         }
     }
 }

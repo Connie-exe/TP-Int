@@ -6,30 +6,34 @@ public class Dirt_Instantiator : MonoBehaviour
 {
     public GameObject dirt;
     public Transform[] dirt_spots;
-    public float timer = 3;
-    private int random;
+    //Vector3[] dirt_spots = new[] { new Vector3(-8.7f, 0.64f, 3.96f), new Vector3(-4.56f, 0.64f, -0.56f), new Vector3(-7.27f, 0.64f, -6.59f), new Vector3(4.49f, 0.64f, 4.65f), new Vector3(4.93f, .64f, -3.39f), new Vector3(8.32f, .64f, -7.27f), new Vector3(.54f, .64f, .91f) };
+    //Quaternion spawnRotation = Quaternion.identity;
+    public float timer = 9;
+    //private int random;
     //private float time = 0;
     void Start()
     {
-        random = Random.Range(0, dirt_spots.Length);
+        //random = Random.Range(0, dirt_spots.Length);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        SpawnDirt();
         timer -= Time.deltaTime;
-        SpawnPatients();
     }
 
-    private void SpawnPatients()
+    private void SpawnDirt()
     {
-        if (timer <= 0)//si timer es menor o igual a 0
+        if (timer <= 0)
         {
-            Vector3 transform = new Vector3(dirt_spots[random].position.x, dirt_spots[random].position.y, dirt_spots[random].position.z);//aquí se declara la nueva posición del instantiate en el entorno 3d de unity
-            Instantiate(dirt, transform, Quaternion.identity);//esto permite que los enemigos spwneen en random lugares sin repetición
-            Vector3 transform2 = new Vector3(dirt_spots[random].position.x, dirt_spots[random].position.y, dirt_spots[random].position.z);//aquí se declara la nueva posición del instantiate en el entorno 3d de unity
-            Instantiate(dirt, transform2, Quaternion.identity);//esto permite que los enemigos spwneen en random lugares sin repetición
-            timer = 3;//una vez que termine el for el timer valdrá 7 y saldrá del if
+            for (int i = 0; i < dirt_spots.Length; i++)
+            {
+            
+                //Vector3 transform = new Vector3(dirt_spots[i].position.x, dirt_spots[i].position.y, dirt_spots[i].position.z);
+                Instantiate(dirt, dirt_spots[i].position, dirt_spots[i].rotation);
+                timer = 9;
+            }
         }
     }
 }

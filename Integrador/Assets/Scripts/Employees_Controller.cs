@@ -17,7 +17,7 @@ public class Employees_Controller : MonoBehaviour
 
     public GameObject[] janitor;
     public static bool b_add_janitor;
-    public static int cont_janitor_active = 0;
+    public static int cont_janitor_active = -1;
     void Start()
     {
         txt_nurseInfo.text = "";
