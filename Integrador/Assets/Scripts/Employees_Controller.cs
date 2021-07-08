@@ -32,6 +32,7 @@ public class Employees_Controller : MonoBehaviour
         SetTime();
         NurseInfo();
         JanitorInfo();
+        ActiveJanitor();
     }
 
     public void SetTime()
