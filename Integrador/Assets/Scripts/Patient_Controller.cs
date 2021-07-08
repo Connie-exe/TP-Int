@@ -57,4 +57,20 @@ public class Patient_Controller : MonoBehaviour
             patient.SetDestination(_waitingRoom.transform.position);
         }
     }
+
+    public void OnTriggerEnter(Collider collision)//si collisiona con...
+    {
+        if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
+        {
+            speed -= 2;//se destruye el objeto con el que se colisiona
+        }
+    }
+
+    public void OnTriggerExit(Collider collision)//si collisiona con...
+    {
+        if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
+        {
+            speed += 2;//se destruye el objeto con el que se colisiona
+        }
+    }
 }

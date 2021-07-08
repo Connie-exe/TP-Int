@@ -14,11 +14,16 @@ public class Employees_Controller : MonoBehaviour
 
     public Text txt_nurseInfo;
     public Text txt_JanitorInfo;
+
+    public GameObject[] janitor;
+    public static bool b_add_janitor;
+    public static int cont_janitor_active = 0;
     void Start()
     {
         txt_nurseInfo.text = "";
         txt_JanitorInfo.text = "";
         startTime = 5f;
+        b_add_janitor = false;
     }
 
     // Update is called once per frame
@@ -26,6 +31,7 @@ public class Employees_Controller : MonoBehaviour
     {
         SetTime();
         NurseInfo();
+        JanitorInfo();
     }
 
     public void SetTime()
@@ -52,5 +58,14 @@ public class Employees_Controller : MonoBehaviour
     public void JanitorInfo()
     {
         txt_JanitorInfo.text = cant_Janitor + "/" + max_Janitor;
+    }
+
+    public void ActiveJanitor()
+    {
+        if(b_add_janitor == true)
+        {
+            janitor[cont_janitor_active].SetActive(true);
+        }
+        b_add_janitor = false;
     }
 }
