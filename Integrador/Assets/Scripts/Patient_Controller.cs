@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Patient_Controller : MonoBehaviour
 {
@@ -13,11 +14,17 @@ public class Patient_Controller : MonoBehaviour
     public GameObject _waitingRoom;
     public int cont_station = 0;
 
+    //public Image fillImage;
+    //public Image clockimage;
+
     void Start()
     {
         waitTime = Employees_Controller.startTime;
         patient = GetComponent<NavMeshAgent>();
-        //stations
+        //fillImage = GetComponent<Image>();
+        //clockimage = GetComponent<Image>();
+        //fillImage.enabled = false;
+        //clockimage.enabled = false;
     }
 
     void Update()
@@ -38,12 +45,17 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Available";
                     cont_station++;
                     waitTime = Employees_Controller.startTime;
-
+                    //fillImage.enabled = true;
+                    //clockimage.enabled = true;
+                    //fillImage.fillAmount = Employees_Controller.startTime;
                 }
                 else
                 {
                     stations[cont_station].transform.tag = "Occupied";
                     waitTime -= Time.deltaTime;
+                    //fillImage.enabled = true;
+                    //clockimage.enabled = true;
+                    //fillImage.fillAmount = waitTime / Employees_Controller.startTime;
                 }
             }
         }
@@ -62,7 +74,7 @@ public class Patient_Controller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
         {
-            speed -= 2;//se destruye el objeto con el que se colisiona
+            speed -= 4;//se destruye el objeto con el que se colisiona
         }
     }
 
@@ -70,7 +82,7 @@ public class Patient_Controller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
         {
-            speed += 2;//se destruye el objeto con el que se colisiona
+            speed += 4;//se destruye el objeto con el que se colisiona
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2318266644999603455}
   m_Layer: 0
   m_Name: Reception
-  m_TagString: Occupied
+  m_TagString: Available
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3205fbba131bfda4299c20963bbb0905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
