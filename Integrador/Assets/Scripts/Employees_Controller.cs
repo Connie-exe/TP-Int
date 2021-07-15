@@ -12,8 +12,13 @@ public class Employees_Controller : MonoBehaviour
     public static int cant_Janitor = 0;
     public static int max_Janitor = 3;
 
+    public static int cant_Publicist = 0;
+    public static int max_Publicist = 2;
+    public static float intantiator_timer;
+
     public Text txt_nurseInfo;
     public Text txt_JanitorInfo;
+    public Text txt_PublicistInfo;
 
     public GameObject[] janitor;
     public static bool b_add_janitor;
@@ -22,7 +27,9 @@ public class Employees_Controller : MonoBehaviour
     {
         txt_nurseInfo.text = "";
         txt_JanitorInfo.text = "";
+        txt_PublicistInfo.text = "";
         startTime = 5f;
+        intantiator_timer = 7f;
         b_add_janitor = false;
     }
 
@@ -30,8 +37,10 @@ public class Employees_Controller : MonoBehaviour
     void Update()
     {
         SetTime();
+        SetTimeInstantiator();
         NurseInfo();
         JanitorInfo();
+        PublicistInfo();
         ActiveJanitor();
     }
 
@@ -47,7 +56,27 @@ public class Employees_Controller : MonoBehaviour
         }
         else if (cant_Nurse == 2)
         {
+            startTime = 2f;
+        }
+        else if (cant_Nurse == 3)
+        {
             startTime = 1.5f;
+        }
+    }
+
+    public void SetTimeInstantiator()
+    {
+        if (cant_Publicist == 0)
+        {
+            intantiator_timer = 7f;
+        }
+        else if (cant_Publicist == 1)
+        {
+            intantiator_timer = 5f;
+        }
+        else if (cant_Nurse == 2)
+        {
+            intantiator_timer = 3.5f;
         }
     }
 
@@ -59,6 +88,11 @@ public class Employees_Controller : MonoBehaviour
     public void JanitorInfo()
     {
         txt_JanitorInfo.text = cant_Janitor + "/" + max_Janitor;
+    }
+
+    public void PublicistInfo()
+    {
+        txt_PublicistInfo.text = cant_Publicist + "/" + max_Publicist;
     }
 
     public void ActiveJanitor()

@@ -91,4 +91,13 @@ public class Store_Controller : MonoBehaviour
             Employees_Controller.cont_janitor_active++;
         }
     }
+
+    public void AddPublicist()
+    {
+       if(Employees_Controller.cant_Publicist < Employees_Controller.max_Janitor && MoneySystem.cant_founds >= 550)
+        {
+            Employees_Controller.cant_Publicist++;
+            MoneySystem.cant_founds -= 550;
+        }
+    }
 }

@@ -16,6 +16,7 @@ public class MoneySystem : MonoBehaviour
         txt_vaccined.text = "Vaccined " + cant_cured;
         txt_founds.text = "Founds: " + cant_founds;
         txt_supplies.text = "Supplies: " + cant_vac;
+        cant_founds = 1000;
         cant_founds += cant_cured * 100;
     }
     void Update()
