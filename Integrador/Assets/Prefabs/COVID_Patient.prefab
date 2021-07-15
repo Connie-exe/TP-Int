@@ -93,10 +93,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.70284843
+  m_Height: 5.4724054
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.01299572, y: 0, z: -0.00000011920929}
 --- !u!54 &2899315630392893703
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1554412229934791484}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091b7239bdbfc0345a223c1daabf5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destinationTime: 2
+  sick_Patient: {fileID: 1554412229934791484}

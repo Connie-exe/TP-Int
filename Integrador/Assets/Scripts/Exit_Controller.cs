@@ -20,7 +20,6 @@ public class Exit_Controller : MonoBehaviour
             if (MoneySystem.cant_founds >= 100)
             {
                 MoneySystem.cant_founds -= 100;
-                MoneySystem.cant_vac--;
             }
             Destroy(collision.gameObject);//se destruye el objeto con el que se colisiona
         }

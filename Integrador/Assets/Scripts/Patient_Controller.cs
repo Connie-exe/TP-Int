@@ -15,7 +15,8 @@ public class Patient_Controller : MonoBehaviour
     public GameObject _waitingRoom;
     public int cont_station = 0;
 
-    //public Image fillImage;
+    //public GameObject sick_patient;
+    //public Transform sick_patientPos;
 
     void Start()
     {
@@ -26,8 +27,9 @@ public class Patient_Controller : MonoBehaviour
 
     void Update()
     {
+        //Contagious();
         PatrolBehavior();
-        WaitingRoom();
+        WaitingRoom(); 
     }
 
     public void PatrolBehavior()
@@ -42,15 +44,15 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Available";
                     cont_station++;
                     waitTime = Employees_Controller.startTime;
-                    fillTime = Employees_Controller.startTime;
-                    StationTime.b_occupied = false;
+                    //fillTime = Employees_Controller.startTime;
+                    //StationTime.b_occupied = false;                    
                 }
                 else
                 {
                     stations[cont_station].transform.tag = "Occupied";
                     StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
-                    fillTime -= Time.deltaTime;
+                    //fillTime -= Time.deltaTime;
                 }
             }
         }
@@ -64,6 +66,23 @@ public class Patient_Controller : MonoBehaviour
             patient.SetDestination(_waitingRoom.transform.position);
         }
     }
+
+    //public void Contagious()
+    //{
+    //    if (Vector3.Distance(transform.position, sick_patientPos.position) < 3f )
+    //    {
+    //        Instantiate(sick_patient, transform.position, transform.rotation);
+    //        Destroy(this.gameObject);
+    //        //StartCoroutine(Contagiar());
+    //    }
+    //}
+
+    //IEnumerator Contagiar()
+    //{
+    //    yield return new WaitForSeconds(3f);
+    //    Instantiate(sick_patient, this.transform.position, this.transform.rotation);
+    //    Destroy(this.gameObject);
+    //}
 
     public void OnTriggerEnter(Collider collision)//si collisiona con...
     {
