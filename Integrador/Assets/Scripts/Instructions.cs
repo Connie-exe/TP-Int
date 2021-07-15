@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Instructions : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Instructions : MonoBehaviour
     {
         CovidNotif();
         OutOfVaccines();
+        Loser();
         //ArrowPoint();
     }
 
@@ -60,6 +62,25 @@ public class Instructions : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
+
+    public void Loser()
+    {
+        if (COVID_Counter.cont >= 4)
+        {
+            panel_warning.SetActive(true);
+            _explanation = "There where too many patients with COVID!! You lose!";
+            txt_explanation.text = "" + _explanation;
+            Time.timeScale = 0f;
+            StartCoroutine(RestartGame());
+        }
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("SampleScene");
+    }
+
 
     //IEnumerator COVID_Instruction()
     //{

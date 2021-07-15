@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class COVID_Counter : MonoBehaviour
 {
-
+    //private List<GameObject> sick_patients = new List<GameObject>();
     public static int cont;
     public Text txt_cont;
     void Start()
@@ -19,8 +19,8 @@ public class COVID_Counter : MonoBehaviour
 
     public void Count_Sick()
     {
-        //sick_patients = GameObject.FindGameObjectsWithTag("COVID_Patient");
-        //cont++;
-        //txt_cont.text = "SickCount: " + cont;
+        //GameObject s = GameObject.FindWithTag("COVID_Patient");
+        //sick_patients.Add(s);
+        txt_cont.text = "SickCount: " + cont;
     }
 }

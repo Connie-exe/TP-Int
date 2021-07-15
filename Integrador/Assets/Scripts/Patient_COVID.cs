@@ -16,6 +16,7 @@ public class Patient_COVID : MonoBehaviour
     {
         COVID_Patient = GetComponent<NavMeshAgent>();
         destination = new Vector3(UnityEngine.Random.Range(-10, 12), 1, UnityEngine.Random.Range(-12, 9));
+        COVID_Counter.cont++;
         //b_isCreated = false;
     }
     private void Update()
