@@ -2067,7 +2067,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patients:
   - {fileID: 4363576531710132019, guid: 213127d48f8bb904f9f7c0494efcec24, type: 3}
-  - {fileID: 1554412229934791484, guid: bd3dc6ec5f0493047aee29e81a588f0a, type: 3}
   instantiatePos: {fileID: 314205670}
   timer: 7
 --- !u!4 &314205672
@@ -7217,7 +7216,7 @@ PrefabInstance:
     - target: {fileID: 6807418893358207134, guid: 641ce1ba7bcc0c0489a0dd74124986b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.303006
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 6807418893358207134, guid: 641ce1ba7bcc0c0489a0dd74124986b1,
         type: 3}

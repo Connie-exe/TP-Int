@@ -69,7 +69,7 @@ public class Instructions : MonoBehaviour
 
     public void Loser()
     {
-        if (COVID_Counter.cont >= 2)
+        if (COVID_Counter.cont >= 4)
         {
             panel_warning.SetActive(true);
             _explanation = "There were too many patients with COVID!! You lose!";
