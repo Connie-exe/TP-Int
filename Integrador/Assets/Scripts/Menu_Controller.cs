@@ -21,4 +21,9 @@ public class Menu_Controller : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
