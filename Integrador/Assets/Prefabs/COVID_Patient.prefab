@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2349580554338735398}
   - component: {fileID: 2899315630392893703}
   - component: {fileID: 8589979231873013714}
-  - component: {fileID: 8386665791410835025}
   - component: {fileID: 9151354982090633770}
   m_Layer: 0
   m_Name: COVID_Patient
@@ -136,29 +135,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8386665791410835025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554412229934791484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db488843704a7154abb1f0feb61b4a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  waitTime: 0
-  startTime: 3
-  stations:
-  - {fileID: 2318266644999603424, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
-  - {fileID: 7146354262617615869, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
-  - {fileID: 6807418893358207134, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  - {fileID: 7092674980109697200, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
-  _waitingRoom: {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7,
-    type: 3}
-  cont_station: 0
 --- !u!114 &9151354982090633770
 MonoBehaviour:
   m_ObjectHideFlags: 0

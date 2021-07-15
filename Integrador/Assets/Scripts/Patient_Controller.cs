@@ -8,6 +8,7 @@ public class Patient_Controller : MonoBehaviour
 {
     public float speed;
     public float waitTime;
+    public static float fillTime;
     private NavMeshAgent patient;
 
     public Transform[] stations;
@@ -15,16 +16,12 @@ public class Patient_Controller : MonoBehaviour
     public int cont_station = 0;
 
     //public Image fillImage;
-    //public Image clockimage;
 
     void Start()
     {
         waitTime = Employees_Controller.startTime;
+        fillTime = waitTime;
         patient = GetComponent<NavMeshAgent>();
-        //fillImage = GetComponent<Image>();
-        //clockimage = GetComponent<Image>();
-        //fillImage.enabled = false;
-        //clockimage.enabled = false;
     }
 
     void Update()
@@ -45,17 +42,15 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Available";
                     cont_station++;
                     waitTime = Employees_Controller.startTime;
-                    //fillImage.enabled = true;
-                    //clockimage.enabled = true;
-                    //fillImage.fillAmount = Employees_Controller.startTime;
+                    fillTime = Employees_Controller.startTime;
+                    StationTime.b_occupied = false;
                 }
                 else
                 {
                     stations[cont_station].transform.tag = "Occupied";
+                    StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
-                    //fillImage.enabled = true;
-                    //clockimage.enabled = true;
-                    //fillImage.fillAmount = waitTime / Employees_Controller.startTime;
+                    fillTime -= Time.deltaTime;
                 }
             }
         }
