@@ -10,17 +10,28 @@ public class COVID_Counter : MonoBehaviour
     public Text txt_cont;
     void Start()
     {
-        txt_cont.text = "SickCount: ";
+        cont = 0;
+        txt_cont.text = "SickCount: 0/2";
     }   
     void Update()
     {
         Count_Sick();
+        //COVID_Destroy();
     }
 
     public void Count_Sick()
     {
         //GameObject s = GameObject.FindWithTag("COVID_Patient");
         //sick_patients.Add(s);
-        txt_cont.text = "SickCount: " + cont;
+        txt_cont.text = "SickCount: " + cont + "/2";
     }
+
+    //public static void COVID_Destroy()
+    //{
+    //    GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("COVID_Patient");
+    //    foreach (GameObject t in taggedObjects)
+    //    {
+    //        Destroy(t);
+    //    }
+    //}
 }

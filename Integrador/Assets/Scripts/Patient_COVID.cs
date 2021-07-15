@@ -71,8 +71,10 @@ public class Patient_COVID : MonoBehaviour
     public void OnMouseDown()
     {
         MoneySystem.cant_founds += 200;
+        COVID_Counter.cont--;
         Destroy(gameObject);
     }
+
 
     //private void OnCollisionEnter(Collision collision)
     //{

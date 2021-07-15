@@ -13,6 +13,8 @@ public class Instructions : MonoBehaviour
     public GameObject panel_warning;
     public Text txt_explanation;
     private string _explanation;
+
+    //public static bool b_pandemic;
     //public GameObject arrow;
     //private float offsetX;
     //private bool b_isCreated;
@@ -25,6 +27,8 @@ public class Instructions : MonoBehaviour
 
         panel_warning.SetActive(false);
         txt_explanation.text = "";
+
+        //b_pandemic = false;
     }
 
     
@@ -65,20 +69,19 @@ public class Instructions : MonoBehaviour
 
     public void Loser()
     {
-        if (COVID_Counter.cont >= 4)
+        if (COVID_Counter.cont >= 2)
         {
             panel_warning.SetActive(true);
-            _explanation = "There where too many patients with COVID!! You lose!";
+            _explanation = "There were too many patients with COVID!! You lose!";
             txt_explanation.text = "" + _explanation;
-            Time.timeScale = 0f;
             StartCoroutine(RestartGame());
         }
     }
 
     IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("SampleScene");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Menu");
     }
 
 

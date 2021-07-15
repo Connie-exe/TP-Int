@@ -20,7 +20,7 @@ public class Dirt_Instantiator : MonoBehaviour
 
     private void SpawnDirt()
     {
-        if (timer <= 0)
+        if (timer <= 0 && dirt == null)
         {
             for (int i = 0; i < dirt_spots.Length; i++)
             {
