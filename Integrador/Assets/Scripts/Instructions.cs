@@ -12,8 +12,10 @@ public class Instructions : MonoBehaviour
 
     public GameObject panel_warning;
     public Text txt_explanation;
+    public Text txt_explanation1;
     private string _explanation;
 
+    public GameObject panel_LevelUp;
     //public static bool b_pandemic;
     //public GameObject arrow;
     //private float offsetX;
@@ -26,7 +28,9 @@ public class Instructions : MonoBehaviour
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
 
         panel_warning.SetActive(false);
+        panel_LevelUp.SetActive(false);
         txt_explanation.text = "";
+        txt_explanation1.text = "";
 
         //b_pandemic = false;
     }
@@ -37,6 +41,7 @@ public class Instructions : MonoBehaviour
         CovidNotif();
         OutOfVaccines();
         Loser();
+        Winner();
         //ArrowPoint();
     }
 
@@ -82,6 +87,18 @@ public class Instructions : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Menu");
+    }
+
+    public void Winner()
+    {
+        if(MoneySystem.cant_cured == 10 && MoneySystem.cant_founds == 1000 && MoneySystem.b_loan == false && Crack_Controller.cont_damage <= 0)
+        {
+            panel_LevelUp.SetActive(true);
+            _explanation = "You have accomplished all the tasks of this level!";
+            txt_explanation1.text = "" + _explanation;
+            StartCoroutine(RestartGame());
+
+        }
     }
 
 

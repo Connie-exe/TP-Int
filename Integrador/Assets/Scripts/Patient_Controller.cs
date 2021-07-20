@@ -21,7 +21,7 @@ public class Patient_Controller : MonoBehaviour
     void Start()
     {
         waitTime = Employees_Controller.startTime;
-        fillTime = waitTime;
+        //fillTime = waitTime;
         patient = GetComponent<NavMeshAgent>();
     }
 

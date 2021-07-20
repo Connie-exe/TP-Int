@@ -7,16 +7,21 @@ public class MoneySystem : MonoBehaviour
     public Text txt_vaccined;
     public Text txt_founds;
     public Text txt_supplies;
+    public Text txt_debt;
 
-    public static int cant_founds = 1000;
+    public static int cant_founds = 15000;
     public static int cant_cured = 0;
     public static int cant_vac = 1;
+    public static int cant_debt = 0;
+
+    public static bool b_loan;
     void Start()
     {
-        txt_vaccined.text = "Vaccined " + cant_cured;
+        txt_vaccined.text = "Vaccined: " + cant_cured;
         txt_founds.text = "Founds: " + cant_founds;
         txt_supplies.text = "Supplies: " + cant_vac;
-        cant_founds = 1000;
+        txt_debt.text = "Debt: " + cant_debt;
+        b_loan = false;
         //cant_founds += cant_cured * 100;
     }
     void Update()
@@ -29,5 +34,6 @@ public class MoneySystem : MonoBehaviour
         txt_vaccined.text = "Vaccined " + cant_cured;
         txt_founds.text = "Founds: " + cant_founds;
         txt_supplies.text = "Supplies: " + cant_vac;
+        txt_debt.text = "Debt: " + cant_debt;
     }
 }

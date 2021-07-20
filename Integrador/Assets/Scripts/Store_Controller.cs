@@ -41,17 +41,14 @@ public class Store_Controller : MonoBehaviour
         if (drop_loan.value == 0)
         {
             loan_selected = 0;
-            //AddLoan();
         }
         else if (drop_loan.value == 1)
         {
             loan_selected = 1;
-            //AddLoan();
         }
         else if (drop_loan.value == 2)
         {
             loan_selected = 2;
-            //AddLoan();
         }
         AddLoan();
     }
@@ -61,14 +58,20 @@ public class Store_Controller : MonoBehaviour
         if (loan_selected == 0)
         {
             MoneySystem.cant_founds += 500;
+            MoneySystem.cant_debt += 575;
+            MoneySystem.b_loan = true;
         }
         else if (loan_selected == 1)
         {
             MoneySystem.cant_founds += 800;
+            MoneySystem.cant_debt += 920;
+            MoneySystem.b_loan = true;
         }
         else if (loan_selected == 2)
         {
             MoneySystem.cant_founds += 1000;
+            MoneySystem.cant_debt += 1150;
+            MoneySystem.b_loan = true;
         }
     }
 
@@ -100,4 +103,14 @@ public class Store_Controller : MonoBehaviour
             MoneySystem.cant_founds -= 550;
         }
     }
+
+    public void PayDebt()
+    {
+        if(MoneySystem.cant_founds >= MoneySystem.cant_debt)
+        {
+            MoneySystem.cant_founds -= MoneySystem.cant_debt;
+            MoneySystem.cant_debt = 0;
+            MoneySystem.b_loan = false;
+        }
+    }    
 }
