@@ -22,6 +22,7 @@ public class Exit_Controller : MonoBehaviour
             {
                 MoneySystem.cant_founds -= 100;
             }
+            COVID_Counter.cont--;
             Destroy(collision.gameObject);//se destruye el objeto con el que se colisiona
         }
     }
