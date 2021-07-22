@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Store_Controller : MonoBehaviour
 {
@@ -112,5 +113,10 @@ public class Store_Controller : MonoBehaviour
             MoneySystem.cant_debt = 0;
             MoneySystem.b_loan = false;
         }
-    }    
+    } 
+    
+    public void MiniGame()
+    {
+        SceneManager.LoadScene("MiniGame");
+    }
 }
