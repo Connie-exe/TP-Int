@@ -7,7 +7,7 @@ public class Inspector_Instantiator : MonoBehaviour
     public GameObject inspector;
     public float timer = 10;
 
-    public bool b_isCreated;    
+    public static bool b_isCreated;    
 
     void Start()
     {        

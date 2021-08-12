@@ -14,6 +14,8 @@ public class Instructions : MonoBehaviour
     public bool b_crack_notif;
     public GameObject cracks;
 
+    public bool b_inspector_notif;
+
     public GameObject panel_warning;
     public Text txt_explanation;
     public Text txt_explanation1;
@@ -32,6 +34,8 @@ public class Instructions : MonoBehaviour
         cracks = GameObject.FindGameObjectWithTag("Crack");
         b_crack_notif = false;
 
+        b_inspector_notif = false;
+
         panel_warning.SetActive(false);
         panel_LevelUp.SetActive(false);
         txt_explanation.text = "";
@@ -43,6 +47,7 @@ public class Instructions : MonoBehaviour
     {
         CovidNotif();
         CrackNotif();
+        InspectorNotif();
         OutOfVaccines();
         Loser();
         Winner();
@@ -68,6 +73,17 @@ public class Instructions : MonoBehaviour
             txt_notif.text = "Oh no! There has been an earthquake! Click on the cracks on the floor to repair them!";
             notif_decor.SetActive(true);
             b_crack_notif = true;
+            StartCoroutine(Notifs());
+        }
+    }
+
+    public void InspectorNotif()
+    {
+        if (Inspector_Instantiator.b_isCreated == true && b_inspector_notif == false)
+        {
+            txt_notif.text = "The inspector has arrived! Click on them to have a quick test. It will reward you!";
+            notif_decor.SetActive(true);
+            b_inspector_notif = true;
             StartCoroutine(Notifs());
         }
     }
