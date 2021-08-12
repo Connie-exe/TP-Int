@@ -18,7 +18,7 @@ public class Instructions : MonoBehaviour
 
     public GameObject panel_LevelUp;
 
-    public static bool b_VIP_achievement;
+    //public static bool b_VIP_achievement;
 
     //public static int cont_Levels;
 
@@ -37,7 +37,7 @@ public class Instructions : MonoBehaviour
 
         //cont_Levels = 0;
 
-        b_VIP_achievement = false;
+        //b_VIP_achievement = false;
     }
 
     
@@ -57,15 +57,18 @@ public class Instructions : MonoBehaviour
             txt_notif.text = "Oh no! This patient has COVID. Click on them to send them home or they're gonna spread the disease.";
             notif_decor.SetActive(true);
             b_covid_notif = true;
-        }
-        if (covid_patient == false)
-        {
-            txt_notif.text = "";
-            notif_decor.SetActive(false);
+            StartCoroutine(Notifs());
         }
     }
 
-    
+    IEnumerator Notifs()
+    {
+        yield return new WaitForSeconds(3f);
+        notif_decor.SetActive(false);
+        txt_notif.text = "";
+    }
+
+
     public void OutOfVaccines()
     {
         if (MoneySystem.cant_vac <= 0)

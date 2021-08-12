@@ -18,6 +18,11 @@ public class Store_Controller : MonoBehaviour
         
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public void OpenStore()
     {
         Time.timeScale = 0f;

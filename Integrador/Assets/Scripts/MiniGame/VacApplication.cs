@@ -46,7 +46,9 @@ public class VacApplication : MonoBehaviour
             StartCoroutine(BackToGame());
             if(VIP_Controller.b_isVIP == true)
             {
-                Instructions.b_VIP_achievement = true;
+                //Instructions.b_VIP_achievement = true;
+                MoneySystem.cant_vac += 5;
+                txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
             }
         }
     }
