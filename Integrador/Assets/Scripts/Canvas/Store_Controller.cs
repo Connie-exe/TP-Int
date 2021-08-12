@@ -8,6 +8,9 @@ public class Store_Controller : MonoBehaviour
 {
     public Dropdown drop_loan;
     private int loan_selected;
+
+    public List<GameObject> pregs;
+    private int preg_cont;
     void Start()
     {
         
@@ -124,4 +127,14 @@ public class Store_Controller : MonoBehaviour
     {
         SceneManager.LoadScene("MiniGame");
     }
+
+    //public void NextQuestion()
+    //{
+    //    if(preg_cont <= pregs.Count)
+    //    {
+    //        preg_cont++;
+    //        pregs[preg_cont-1].SetActive(false);
+    //        pregs[preg_cont].SetActive(true);
+    //    }
+    //}
 }
