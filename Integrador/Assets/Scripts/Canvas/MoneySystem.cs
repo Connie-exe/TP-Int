@@ -9,7 +9,7 @@ public class MoneySystem : MonoBehaviour
     public Text txt_supplies;
     public Text txt_debt;
 
-    public static int cant_founds;
+    public static int cant_founds = 1000;
     public static int cant_cured = 0;
     public static int cant_vac = 5;
     public static int cant_debt = 0;
@@ -23,14 +23,6 @@ public class MoneySystem : MonoBehaviour
         txt_debt.text = "Debt: " + cant_debt;
         b_loan = false;  
         
-        //if(Instructions.cont_Levels == 0)
-        //{
-        //    cant_founds = 1000;
-        //}
-        //if(Instructions.cont_Levels == 1)
-        //{
-        //    cant_founds = 2000;
-        //}
     }
     void Update()
     {

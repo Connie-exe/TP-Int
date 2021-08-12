@@ -9,41 +9,40 @@ public class Instructions : MonoBehaviour
     public Text txt_notif;
     public GameObject notif_decor;
     public bool b_covid_notif;
-    public GameObject covid_patient;   
+    public GameObject covid_patient;
+
+    public bool b_crack_notif;
+    public GameObject cracks;
 
     public GameObject panel_warning;
     public Text txt_explanation;
     public Text txt_explanation1;
     private string _explanation;
 
-    public GameObject panel_LevelUp;
-
-    //public static bool b_VIP_achievement;
-
-    //public static int cont_Levels;
+    public GameObject panel_LevelUp;    
 
     void Start()
     {
         txt_notif.text = "";
-        b_covid_notif = false;
         notif_decor.SetActive(false);
-        //b_isCreated = false;
+
+        b_covid_notif = false;
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
+
+        cracks = GameObject.FindGameObjectWithTag("Crack");
+        b_crack_notif = false;
 
         panel_warning.SetActive(false);
         panel_LevelUp.SetActive(false);
         txt_explanation.text = "";
-        txt_explanation1.text = "";
-
-        //cont_Levels = 0;
-
-        //b_VIP_achievement = false;
+        txt_explanation1.text = "";       
     }
 
     
     void LateUpdate()
     {
         CovidNotif();
+        CrackNotif();
         OutOfVaccines();
         Loser();
         Winner();
@@ -57,6 +56,18 @@ public class Instructions : MonoBehaviour
             txt_notif.text = "Oh no! This patient has COVID. Click on them to send them home or they're gonna spread the disease.";
             notif_decor.SetActive(true);
             b_covid_notif = true;
+            StartCoroutine(Notifs());
+        }
+    }
+
+    public void CrackNotif()
+    {
+        cracks = GameObject.FindGameObjectWithTag("Crack");        
+        if (cracks == true && b_crack_notif == false)
+        {
+            txt_notif.text = "Oh no! There has been an earthquake! Click on the cracks on the floor to repair them!";
+            notif_decor.SetActive(true);
+            b_crack_notif = true;
             StartCoroutine(Notifs());
         }
     }

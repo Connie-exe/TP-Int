@@ -3537,6 +3537,8 @@ MonoBehaviour:
   notif_decor: {fileID: 1231041619}
   b_covid_notif: 0
   covid_patient: {fileID: 0}
+  b_crack_notif: 0
+  cracks: {fileID: 0}
   panel_warning: {fileID: 576350782}
   txt_explanation: {fileID: 629642688}
   txt_explanation1: {fileID: 207946411}
@@ -11783,6 +11785,8 @@ MonoBehaviour:
   timer: 3
   vip_patient: {fileID: 7519606073419688821, guid: 426f0cc0a8299b040b724297ca2c81ed,
     type: 3}
+  notif_decor: {fileID: 1231041619}
+  txt_VIP_notif: {fileID: 1301673683}
 --- !u!4 &2093419722
 Transform:
   m_ObjectHideFlags: 0
