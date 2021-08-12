@@ -15,6 +15,7 @@ public class Instructions : MonoBehaviour
     public GameObject cracks;
 
     public bool b_inspector_notif;
+    public bool b_founds_notif;
 
     public GameObject panel_warning;
     public Text txt_explanation;
@@ -35,6 +36,7 @@ public class Instructions : MonoBehaviour
         b_crack_notif = false;
 
         b_inspector_notif = false;
+        b_founds_notif = false;
 
         panel_warning.SetActive(false);
         panel_LevelUp.SetActive(false);
@@ -48,6 +50,7 @@ public class Instructions : MonoBehaviour
         CovidNotif();
         CrackNotif();
         InspectorNotif();
+        FoundsNotif();
         OutOfVaccines();
         Loser();
         Winner();
@@ -84,6 +87,17 @@ public class Instructions : MonoBehaviour
             txt_notif.text = "The inspector has arrived! Click on them to have a quick test. It will reward you!";
             notif_decor.SetActive(true);
             b_inspector_notif = true;
+            StartCoroutine(Notifs());
+        }
+    }
+
+    public void FoundsNotif()
+    {
+        if (MoneySystem.cant_founds <= 0 && b_founds_notif == false)
+        {
+            txt_notif.text = "Oh no! Our numbers are nearly in red! You can ask for a loan to the government at the store.";
+            notif_decor.SetActive(true);
+            b_founds_notif = true;
             StartCoroutine(Notifs());
         }
     }
