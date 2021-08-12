@@ -40,6 +40,7 @@ public class VacApplication : MonoBehaviour
         {
             MoneySystem.cant_founds += 300;
             MoneySystem.cant_vac--;
+            MoneySystem.cant_cured++;
             txt_founds.text = "Founds: " + MoneySystem.cant_founds;
             txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
             Destroy(other.gameObject);
@@ -49,6 +50,7 @@ public class VacApplication : MonoBehaviour
                 //Instructions.b_VIP_achievement = true;
                 MoneySystem.cant_vac += 5;
                 txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+                MoneySystem.cant_cured++;
             }
         }
     }

@@ -4822,6 +4822,8 @@ MonoBehaviour:
   covid_patient: {fileID: 0}
   b_crack_notif: 0
   cracks: {fileID: 0}
+  b_VIP_notif: 0
+  VIP_Patient: {fileID: 0}
   b_inspector_notif: 0
   b_founds_notif: 0
   panel_warning: {fileID: 576350782}
@@ -13953,7 +13955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c26419f2bd66394aaa76dc8a58caea0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62e4e28edd1b7594996bb9ac55121005, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16027,8 +16029,6 @@ MonoBehaviour:
   timer: 3
   vip_patient: {fileID: 7519606073419688821, guid: 426f0cc0a8299b040b724297ca2c81ed,
     type: 3}
-  notif_decor: {fileID: 1231041619}
-  txt_VIP_notif: {fileID: 1301673683}
 --- !u!4 &2093419722
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class Instructions : MonoBehaviour
     public bool b_crack_notif;
     public GameObject cracks;
 
+    public bool b_VIP_notif;
+    public GameObject VIP_Patient;
+
     public bool b_inspector_notif;
     public bool b_founds_notif;
 
@@ -35,6 +38,9 @@ public class Instructions : MonoBehaviour
         cracks = GameObject.FindGameObjectWithTag("Crack");
         b_crack_notif = false;
 
+        VIP_Patient = GameObject.FindGameObjectWithTag("VIP_Patient");
+        b_VIP_notif = false;
+
         b_inspector_notif = false;
         b_founds_notif = false;
 
@@ -50,6 +56,7 @@ public class Instructions : MonoBehaviour
         CovidNotif();
         CrackNotif();
         InspectorNotif();
+        VIPNotif();
         FoundsNotif();
         OutOfVaccines();
         Loser();
@@ -102,6 +109,17 @@ public class Instructions : MonoBehaviour
         }
     }
 
+    public void VIPNotif()
+    {
+        VIP_Patient = GameObject.FindGameObjectWithTag("VIP_patient");
+        if (VIP_Patient == true && b_VIP_notif == false)
+        {
+            notif_decor.SetActive(true);
+            txt_notif.text = "Look! The yellow one it's a VIP patient. If you click on them before the bar runs out they will donate supplies!";
+            b_VIP_notif = true;
+            StartCoroutine(Notifs());
+        }
+    }
     IEnumerator Notifs()
     {
         yield return new WaitForSeconds(3f);
@@ -140,7 +158,7 @@ public class Instructions : MonoBehaviour
 
     public void Winner()
     {
-        if(MoneySystem.cant_cured == 10 && MoneySystem.cant_founds == 1000 && MoneySystem.b_loan == false && Crack_Controller.cont_damage <= 0)
+        if(MoneySystem.cant_cured >= 10 && MoneySystem.cant_founds >= 1000 && MoneySystem.b_loan == false && Crack_Controller.cont_damage <= 0)
         {
             panel_LevelUp.SetActive(true);
             _explanation = "You have accomplished all the tasks of this level!";
