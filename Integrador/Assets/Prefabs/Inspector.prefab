@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1519305719142571589}
   - component: {fileID: 1519305719142571586}
   - component: {fileID: 1519305719142571587}
-  - component: {fileID: 7862057376373071491}
+  - component: {fileID: -5578439382334866926}
   m_Layer: 0
   m_Name: Inspector
   m_TagString: Untagged
@@ -135,7 +135,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7862057376373071491
+--- !u!114 &-5578439382334866926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1519305719142571585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 091b7239bdbfc0345a223c1daabf5130, type: 3}
+  m_Script: {fileID: 11500000, guid: 86098bd60737fc247aa23d81aa6029fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTime: 2
+  destinationTime: 4
