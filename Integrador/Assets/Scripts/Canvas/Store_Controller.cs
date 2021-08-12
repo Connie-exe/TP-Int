@@ -9,9 +9,11 @@ public class Store_Controller : MonoBehaviour
     public Dropdown drop_loan;
     private int loan_selected;
 
+    public static bool inspector_test_done;
+
     void Start()
     {
-        
+        inspector_test_done = false;
     }
   
     void Update()
@@ -130,6 +132,13 @@ public class Store_Controller : MonoBehaviour
     {
         MoneySystem.cant_founds += 700;
         MoneySystem.cant_debt = 0;
+        inspector_test_done = true;
     }
- 
+
+    public void CloseTest()
+    {
+        Time.timeScale = 1f;
+        inspector_test_done = true;
+    }
+
 }

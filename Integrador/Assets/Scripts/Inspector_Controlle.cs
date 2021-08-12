@@ -18,9 +18,13 @@ public class Inspector_Controlle : MonoBehaviour
 
     public void Test()
     {
-        if(Inspector.b_inspector_test == true)
+        if (Inspector.b_inspector_test == true && Store_Controller.inspector_test_done == false)
         {
             inspector_test.SetActive(true);
+        }
+        if (Store_Controller.inspector_test_done == true)
+        {
+            inspector_test.SetActive(false);
         }
     }
 }

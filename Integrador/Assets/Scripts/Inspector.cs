@@ -36,5 +36,6 @@ public class Inspector : MonoBehaviour
     {
         Time.timeScale = 0f;
         b_inspector_test = true;
+        Destroy(this.gameObject);
     }
 }
