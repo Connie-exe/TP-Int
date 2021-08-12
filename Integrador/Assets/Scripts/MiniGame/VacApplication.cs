@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class VacApplication : MonoBehaviour
 {
     public Text txt_founds;
+    public Text txt_supplies;
     public Image fillimage;
     public float timer;
     private float waitTime;
     void Start()
     {
         txt_founds.text = "Founds: " + MoneySystem.cant_founds;
+        txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
         waitTime = timer;
         //fillimage = GetComponent<Image>();
     }
@@ -37,9 +39,15 @@ public class VacApplication : MonoBehaviour
         if (other.gameObject.CompareTag("Vaccine"))
         {
             MoneySystem.cant_founds += 300;
+            MoneySystem.cant_vac--;
             txt_founds.text = "Founds: " + MoneySystem.cant_founds;
+            txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());
+            if(VIP_Controller.b_isVIP == true)
+            {
+                Instructions.b_VIP_achievement = true;
+            }
         }
     }
 

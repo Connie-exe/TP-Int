@@ -8,8 +8,7 @@ public class MiniGameButton : MonoBehaviour
     public Button btn_miniGame;
 
     void Start()
-    {
-        //btn_miniGame = GetComponent<Button>();
+    {         
         btn_miniGame.enabled = false;
     }
 

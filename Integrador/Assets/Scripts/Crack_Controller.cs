@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crack_Controller : MonoBehaviour
 {
-    public static int cont_damage;
+    public static int cont_damage;    
     private void Start()
     {
         cont_damage = Earthquake_Controller.cant_damageSpots;
@@ -20,7 +20,7 @@ public class Crack_Controller : MonoBehaviour
         if(MoneySystem.cant_founds >= 500)
         {
             MoneySystem.cant_founds -= 500;
-            cont_damage--;
+            cont_damage--;            
             Destroy(gameObject);
         }
     }

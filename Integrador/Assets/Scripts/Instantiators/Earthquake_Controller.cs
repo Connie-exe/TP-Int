@@ -11,11 +11,13 @@ public class Earthquake_Controller : MonoBehaviour
 
     public bool b_isCreated;
     private Shake_Effect shake;
+   
     void Start()
     {
         cant_damageSpots = damage_spots.Length;
         b_isCreated = false;
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake_Effect>();
+        
     }
 
     // Update is called once per frame
@@ -24,7 +26,6 @@ public class Earthquake_Controller : MonoBehaviour
         SpawnCrack();
         
         timer -= Time.deltaTime;
-        //b_isCreated = true;
     }
 
     private void SpawnCrack()
@@ -39,8 +40,7 @@ public class Earthquake_Controller : MonoBehaviour
                 timer = 10;
                 shake.CamShake();
             }
-            b_isCreated = true;
+            b_isCreated = true; 
         }
-        
     }
 }

@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class Instructions : MonoBehaviour
 {
     public Text txt_notif;
-    public static bool b_covid_notif;
-    public GameObject covid_patient;
+    public GameObject notif_decor;
+    public bool b_covid_notif;
+    public GameObject covid_patient;   
 
     public GameObject panel_warning;
     public Text txt_explanation;
@@ -16,14 +17,16 @@ public class Instructions : MonoBehaviour
     private string _explanation;
 
     public GameObject panel_LevelUp;
-    //public static bool b_pandemic;
-    //public GameObject arrow;
-    //private float offsetX;
-    //private bool b_isCreated;
+
+    public static bool b_VIP_achievement;
+
+    //public static int cont_Levels;
+
     void Start()
     {
         txt_notif.text = "";
         b_covid_notif = false;
+        notif_decor.SetActive(false);
         //b_isCreated = false;
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
 
@@ -32,7 +35,9 @@ public class Instructions : MonoBehaviour
         txt_explanation.text = "";
         txt_explanation1.text = "";
 
-        //b_pandemic = false;
+        //cont_Levels = 0;
+
+        b_VIP_achievement = false;
     }
 
     
@@ -42,7 +47,6 @@ public class Instructions : MonoBehaviour
         OutOfVaccines();
         Loser();
         Winner();
-        //ArrowPoint();
     }
 
     public void CovidNotif()
@@ -51,16 +55,17 @@ public class Instructions : MonoBehaviour
         if (covid_patient == true && b_covid_notif == false)
         {
             txt_notif.text = "Oh no! This patient has COVID. Click on them to send them home or they're gonna spread the disease.";
+            notif_decor.SetActive(true);
             b_covid_notif = true;
-            //ArrowPoint();
-            //StartCoroutine(COVID_Instruction());
         }
-        if(covid_patient == false)
+        if (covid_patient == false)
         {
             txt_notif.text = "";
+            notif_decor.SetActive(false);
         }
     }
 
+    
     public void OutOfVaccines()
     {
         if (MoneySystem.cant_vac <= 0)
@@ -96,27 +101,9 @@ public class Instructions : MonoBehaviour
             panel_LevelUp.SetActive(true);
             _explanation = "You have accomplished all the tasks of this level!";
             txt_explanation1.text = "" + _explanation;
+            //cont_Levels ++;
             StartCoroutine(RestartGame());
 
         }
-    }
-
-
-    //IEnumerator COVID_Instruction()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //    txt_notif.text = "";
-    //}
-
-    //public void ArrowPoint()
-    //{
-    //    if(b_isCreated == false)
-    //    {
-    //        offsetX = covid_patient.transform.position.x;
-    //        Vector3 transform = new Vector3(offsetX, covid_patient.transform.position.y + 2, covid_patient.transform.position.z);
-    //        Instantiate(arrow, transform, Quaternion.identity);
-    //        b_isCreated = true;
-    //    }
-
-    //}
+    }   
 }
