@@ -150,14 +150,10 @@ MonoBehaviour:
   speed: 4
   waitTime: 0
   stations:
-  - {fileID: 2318266644999603424, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
-  - {fileID: 7146354262617615869, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
-  - {fileID: 6807418893358207134, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  - {fileID: 7092674980109697200, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
+  - {fileID: 2318266644999603428, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
+  - {fileID: 7146354262617615865, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
+  - {fileID: 6807418893358207130, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
+  - {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7, type: 3}
   _waitingRoom: {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7,
     type: 3}
   cont_station: 0
-  sick_patient: {fileID: 1554412229934791484, guid: bd3dc6ec5f0493047aee29e81a588f0a,
-    type: 3}
-  sick_patientPos: {fileID: 3255056154582354750, guid: bd3dc6ec5f0493047aee29e81a588f0a,
-    type: 3}

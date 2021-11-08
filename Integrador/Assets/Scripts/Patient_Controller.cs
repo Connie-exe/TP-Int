@@ -11,7 +11,7 @@ public class Patient_Controller : MonoBehaviour
     public static float fillTime;
     private NavMeshAgent patient;
 
-    public Transform[] stations;
+    public List<GameObject> stations = new List<GameObject>();
     public GameObject _waitingRoom;
     public int cont_station = 0;
 
@@ -28,16 +28,22 @@ public class Patient_Controller : MonoBehaviour
     void Update()
     {
         //Contagious();
+        AddStations();
         PatrolBehavior();
         WaitingRoom(); 
     }
 
+    public void AddStations()
+    {
+        
+    }
+
     public void PatrolBehavior()
     {
-        if ((stations[cont_station].tag == "Available" || Vector2.Distance(patient.transform.position, stations[cont_station].position) < 0.4f) && stations[cont_station] != null)
+        if ((stations[cont_station].tag == "Available" || Vector2.Distance(patient.transform.position, stations[cont_station].transform.position) < 0.4f) && stations[cont_station] != null)
         {
             patient.SetDestination(stations[cont_station].transform.position);
-            if (Vector2.Distance(patient.transform.position, stations[cont_station].position) < 0.4f)
+            if (Vector2.Distance(patient.transform.position, stations[cont_station].transform.position) < 0.4f)
             {
                 if (waitTime <= 0)
                 {
@@ -61,7 +67,7 @@ public class Patient_Controller : MonoBehaviour
 
     public void WaitingRoom()
     {
-        if (stations[cont_station].tag == "Occupied" && Vector2.Distance(patient.transform.position, stations[cont_station].position) > 0.4f)
+        if (stations[cont_station].tag == "Occupied" && Vector2.Distance(patient.transform.position, stations[cont_station].transform.position) > 0.4f)
         {
             patient.SetDestination(_waitingRoom.transform.position);
         }
