@@ -153,7 +153,9 @@ MonoBehaviour:
   - {fileID: 2318266644999603428, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
   - {fileID: 7146354262617615865, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
   - {fileID: 6807418893358207130, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  - {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7, type: 3}
+  - {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
   _waitingRoom: {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7,
     type: 3}
+  _exit: {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
   cont_station: 0
+  waitingRoomTime: 10

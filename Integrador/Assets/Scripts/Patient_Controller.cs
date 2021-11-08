@@ -13,30 +13,28 @@ public class Patient_Controller : MonoBehaviour
 
     public List<GameObject> stations = new List<GameObject>();
     public GameObject _waitingRoom;
+    public GameObject _exit;
     public int cont_station = 0;
+
+    public float waitingRoomTime;
 
     //public GameObject sick_patient;
     //public Transform sick_patientPos;
 
     void Start()
     {
-        waitTime = Employees_Controller.startTime;
+        waitTime = Employees_Controller.startTime;       
         //fillTime = waitTime;
         patient = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        //Contagious();
-        AddStations();
+        //Contagious();       
         PatrolBehavior();
         WaitingRoom(); 
     }
 
-    public void AddStations()
-    {
-        
-    }
 
     public void PatrolBehavior()
     {
@@ -49,16 +47,13 @@ public class Patient_Controller : MonoBehaviour
                 {
                     stations[cont_station].transform.tag = "Available";
                     cont_station++;
-                    waitTime = Employees_Controller.startTime;
-                    //fillTime = Employees_Controller.startTime;
-                    //StationTime.b_occupied = false;                    
+                    waitTime = Employees_Controller.startTime;                                
                 }
                 else
                 {
                     stations[cont_station].transform.tag = "Occupied";
                     StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
-                    //fillTime -= Time.deltaTime;
                 }
             }
         }
@@ -67,9 +62,14 @@ public class Patient_Controller : MonoBehaviour
 
     public void WaitingRoom()
     {
-        if (stations[cont_station].tag == "Occupied" && Vector2.Distance(patient.transform.position, stations[cont_station].transform.position) > 0.4f)
+        if (stations[cont_station].tag == "Occupied" && Vector2.Distance(patient.transform.position, stations[cont_station].transform.position) > 0.4f && waitingRoomTime > 0)
         {
             patient.SetDestination(_waitingRoom.transform.position);
+            waitingRoomTime -= Time.deltaTime;
+        }
+        if(waitingRoomTime <= 0)
+        {
+            patient.SetDestination(_exit.transform.position);
         }
     }
 
@@ -90,19 +90,19 @@ public class Patient_Controller : MonoBehaviour
     //    Destroy(this.gameObject);
     //}
 
-    public void OnTriggerEnter(Collider collision)//si collisiona con...
+    public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
+        if (collision.gameObject.CompareTag("Dirt"))
         {
-            speed -= 4;//se destruye el objeto con el que se colisiona
+            speed -= 4;
         }
     }
 
-    public void OnTriggerExit(Collider collision)//si collisiona con...
+    public void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Dirt"))//con un objeto con etiqueta Projectile
+        if (collision.gameObject.CompareTag("Dirt"))
         {
-            speed += 4;//se destruye el objeto con el que se colisiona
+            speed += 4;
         }
     }
 }
