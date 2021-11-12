@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 686670316245586217}
   - component: {fileID: 81232087039304968}
   - component: {fileID: 6785047269501506525}
-  - component: {fileID: -4520596198161918547}
   - component: {fileID: 277662655541548068}
+  - component: {fileID: 2312952532289686428}
   m_Layer: 0
   m_Name: Child_Patient
   m_TagString: Patient
@@ -136,19 +136,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4520596198161918547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4363576531710132019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 091b7239bdbfc0345a223c1daabf5130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationTime: 2
 --- !u!114 &277662655541548068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268717ac1127049439482ad86ad94307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2312952532289686428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363576531710132019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e4fc70df8bc014f8d7b1af893dd596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationTime: 4
