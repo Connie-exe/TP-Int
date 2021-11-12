@@ -17,6 +17,9 @@ public class Patient_Controller : MonoBehaviour
     public int cont_station = 0;
 
     public float waitingRoomTime;
+    public static bool b_vaccined;
+
+    public Image fillimage;
 
     //public GameObject sick_patient;
     //public Transform sick_patientPos;
@@ -26,6 +29,7 @@ public class Patient_Controller : MonoBehaviour
         waitTime = Employees_Controller.startTime;       
         //fillTime = waitTime;
         patient = GetComponent<NavMeshAgent>();
+        b_vaccined = true;
     }
 
     void Update()
@@ -54,6 +58,7 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Occupied";
                     StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
+                    fillimage.fillAmount = waitTime / Employees_Controller.startTime;
                 }
             }
         }
@@ -66,10 +71,12 @@ public class Patient_Controller : MonoBehaviour
         {
             patient.SetDestination(_waitingRoom.transform.position);
             waitingRoomTime -= Time.deltaTime;
+            //fillimage.fillAmount = waitTime / Employees_Controller.startTime;
         }
         if(waitingRoomTime <= 0)
         {
             patient.SetDestination(_exit.transform.position);
+            b_vaccined = false;
         }
     }
 

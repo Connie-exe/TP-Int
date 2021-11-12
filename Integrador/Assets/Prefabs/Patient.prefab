@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 81232087039304968}
   - component: {fileID: 6785047269501506525}
   - component: {fileID: 5520827251217111253}
+  - component: {fileID: 3956997055316513517}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Patient
@@ -159,3 +160,19 @@ MonoBehaviour:
   _exit: {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
   cont_station: 0
   waitingRoomTime: 10
+  fillimage: {fileID: 6197517966268915959, guid: b96b0b21e629829449d53d0fe21a3fea,
+    type: 3}
+--- !u!114 &3956997055316513517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363576531710132019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7151f9b02fc954b838de1fd49bfc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  im_clock: {fileID: 6197517966268915953, guid: b96b0b21e629829449d53d0fe21a3fea,
+    type: 3}

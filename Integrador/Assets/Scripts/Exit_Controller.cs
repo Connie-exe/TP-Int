@@ -8,7 +8,7 @@ public class Exit_Controller : MonoBehaviour
    {
         if (collision.gameObject.CompareTag("Patient"))//con un objeto con etiqueta Projectile
         {
-            if(MoneySystem.cant_vac > 0)
+            if(MoneySystem.cant_vac > 0 && Patient_Controller.b_vaccined == true)
             {
                 MoneySystem.cant_cured++;
                 MoneySystem.cant_vac--;
