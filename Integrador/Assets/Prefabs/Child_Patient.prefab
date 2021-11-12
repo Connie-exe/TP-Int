@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 686670316245586217}
   - component: {fileID: 81232087039304968}
   - component: {fileID: 6785047269501506525}
-  - component: {fileID: 5520827251217111253}
+  - component: {fileID: -4520596198161918547}
+  - component: {fileID: 277662655541548068}
   m_Layer: 0
-  m_Name: Patient
+  m_Name: Child_Patient
   m_TagString: Patient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4ea19bbc37b2eb949a457f41475bc2ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,7 +136,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5520827251217111253
+--- !u!114 &-4520596198161918547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,20 +145,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4363576531710132019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db488843704a7154abb1f0feb61b4a01, type: 3}
+  m_Script: {fileID: 11500000, guid: 091b7239bdbfc0345a223c1daabf5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  waitTime: 0
-  stations:
-  - {fileID: 2318266644999603428, guid: 3430e87d3170a3343a20a847d737d44c, type: 3}
-  - {fileID: 7146354262617615865, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
-  - {fileID: 6807418893358207130, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
-  - {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
-  _waitingRoom: {fileID: 8136788608100889811, guid: fad641749b0f3bc42a6e845a062c98f7,
-    type: 3}
-  _exit: {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
-  cont_station: 0
-  waitingRoomTime: 10
-  fillimage: {fileID: 6197517966268915959, guid: b96b0b21e629829449d53d0fe21a3fea,
-    type: 3}
+  destinationTime: 2
+--- !u!114 &277662655541548068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363576531710132019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268717ac1127049439482ad86ad94307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

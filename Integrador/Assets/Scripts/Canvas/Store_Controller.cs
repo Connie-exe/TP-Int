@@ -123,9 +123,19 @@ public class Store_Controller : MonoBehaviour
         }
     } 
     
-    public void MiniGame()
+    public void MiniGame_Diagnostico()
     {
-        SceneManager.LoadScene("MiniGame");
+        SceneManager.LoadScene("CheckPatient");
+    }
+
+    public void MiniGame_Vacuna()
+    {
+        SceneManager.LoadScene("Vaccine_MiniGame");
+    }
+
+    public void MiniGame_VacunaChild()
+    {
+        SceneManager.LoadScene("ChildVaccine_Minigame");
     }
 
     public void Inspector()

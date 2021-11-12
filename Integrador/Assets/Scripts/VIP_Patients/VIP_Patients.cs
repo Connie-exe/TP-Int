@@ -11,7 +11,7 @@ public class VIP_Patients : MonoBehaviour
         if (VIP_Controller.waitTime > 0)
         {
             VIP_Controller.b_isVIP = true;
-            SceneManager.LoadScene("MiniGame");
+            SceneManager.LoadScene("Vaccine_MiniGame");
         }
     }
 }

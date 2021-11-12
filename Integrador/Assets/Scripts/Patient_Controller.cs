@@ -19,7 +19,7 @@ public class Patient_Controller : MonoBehaviour
     public float waitingRoomTime;
     public static bool b_vaccined;
 
-    public Image fillimage;
+    //public Image fillimage;
 
     //public GameObject sick_patient;
     //public Transform sick_patientPos;
@@ -58,7 +58,7 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Occupied";
                     StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
-                    fillimage.fillAmount = waitTime / Employees_Controller.startTime;
+                    //fillimage.fillAmount = waitTime / Employees_Controller.startTime;
                 }
             }
         }
