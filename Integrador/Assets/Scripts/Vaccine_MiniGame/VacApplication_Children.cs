@@ -38,6 +38,7 @@ public class VacApplication_Children : MonoBehaviour
         if (other.gameObject.CompareTag("Vaccine") && EntertainingChild.b_confused == true)
         {           
             MoneySystem.cant_vac--;
+            MoneySystem.cant_cured++;
             txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());           
