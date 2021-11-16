@@ -10,10 +10,11 @@ public class Store_Controller : MonoBehaviour
     private int loan_selected;
 
     public static bool inspector_test_done;
-
+    private int cont_loan;
     void Start()
     {
         inspector_test_done = false;
+        cont_loan = 0;
     }
   
     void Update()
@@ -38,11 +39,11 @@ public class Store_Controller : MonoBehaviour
 
     public void MoreVaccines()
     {
-        if(MoneySystem.cant_founds >= 150)
-        {
+        //if(MoneySystem.cant_founds >= 150)
+        //{
             MoneySystem.cant_vac++;
             MoneySystem.cant_founds -= 150;
-        }
+        //}
     }
 
     public void LoanSelected()
@@ -64,29 +65,32 @@ public class Store_Controller : MonoBehaviour
 
     public void AddLoan()
     {
-        if (loan_selected == 0)
+        if (loan_selected == 0 && cont_loan <= 2)
         {
             MoneySystem.cant_founds += 500;
             MoneySystem.cant_debt += 575;
             MoneySystem.b_loan = true;
+            cont_loan++;
         }
-        else if (loan_selected == 1)
+        else if (loan_selected == 1 && cont_loan <= 2)
         {
             MoneySystem.cant_founds += 800;
             MoneySystem.cant_debt += 920;
             MoneySystem.b_loan = true;
+            cont_loan++;
         }
-        else if (loan_selected == 2)
+        else if (loan_selected == 2 && cont_loan <= 2)
         {
             MoneySystem.cant_founds += 1000;
             MoneySystem.cant_debt += 1150;
             MoneySystem.b_loan = true;
+            cont_loan++;
         }
     }
 
     public void AddNurse()
     {
-        if(Employees_Controller.cant_Nurse < Employees_Controller.max_Nurse && MoneySystem.cant_founds >= 500)
+        if(Employees_Controller.cant_Nurse < Employees_Controller.max_Nurse)
         {
             Employees_Controller.cant_Nurse++;
             MoneySystem.cant_founds -= 500;
@@ -95,7 +99,7 @@ public class Store_Controller : MonoBehaviour
 
     public void AddJanitor()
     {
-        if (Employees_Controller.cant_Janitor < Employees_Controller.max_Janitor && MoneySystem.cant_founds >= 450)
+        if (Employees_Controller.cant_Janitor < Employees_Controller.max_Janitor)
         {
             Employees_Controller.cant_Janitor++;
             MoneySystem.cant_founds -= 450;
@@ -106,7 +110,7 @@ public class Store_Controller : MonoBehaviour
 
     public void AddPublicist()
     {
-       if(Employees_Controller.cant_Publicist < Employees_Controller.max_Janitor && MoneySystem.cant_founds >= 550)
+       if(Employees_Controller.cant_Publicist < Employees_Controller.max_Janitor)
         {
             Employees_Controller.cant_Publicist++;
             MoneySystem.cant_founds -= 550;
@@ -120,6 +124,7 @@ public class Store_Controller : MonoBehaviour
             MoneySystem.cant_founds -= MoneySystem.cant_debt;
             MoneySystem.cant_debt = 0;
             MoneySystem.b_loan = false;
+            cont_loan = 0;
         }
     } 
     

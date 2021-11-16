@@ -46,22 +46,25 @@ public class Employees_Controller : MonoBehaviour
 
     public void SetTime()
     {
-        if (cant_Nurse == 0)
+        if(Protesta_Controller.b_protesta == false)
         {
-            startTime = 5f;
-        }
-        else if (cant_Nurse == 1)
-        {
-            startTime = 3f;
-        }
-        else if (cant_Nurse == 2)
-        {
-            startTime = 2f;
-        }
-        else if (cant_Nurse == 3)
-        {
-            startTime = 1.5f;
-        }
+            if (cant_Nurse == 0)
+            {
+                startTime = 5f;
+            }
+            else if (cant_Nurse == 1)
+            {
+                startTime = 3f;
+            }
+            else if (cant_Nurse == 2)
+            {
+                startTime = 2f;
+            }
+            else if (cant_Nurse == 3)
+            {
+                startTime = 1.5f;
+            }
+        }     
     }
 
     public void SetTimeInstantiator()
