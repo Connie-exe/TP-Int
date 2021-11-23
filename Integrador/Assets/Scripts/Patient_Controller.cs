@@ -16,25 +16,28 @@ public class Patient_Controller : MonoBehaviour
     public GameObject _exit;
     public int cont_station = 0;
 
-    public float waitingRoomTime;
+    private float waitingRoomTime;
     public static bool b_vaccined;
-
-    //public Image fillimage;
-
-    //public GameObject sick_patient;
-    //public Transform sick_patientPos;
 
     void Start()
     {
         waitTime = Employees_Controller.startTime;       
-        //fillTime = waitTime;
+
         patient = GetComponent<NavMeshAgent>();
         b_vaccined = true;
+        
+        if(Store_Controller.b_waitingRoom == false)
+        {            
+            waitingRoomTime = 5;
+        }
+        else
+        {
+            waitingRoomTime = 10;
+        }
     }
 
     void Update()
-    {
-        //Contagious();       
+    {      
         PatrolBehavior();
         WaitingRoom(); 
     }
@@ -58,7 +61,6 @@ public class Patient_Controller : MonoBehaviour
                     stations[cont_station].transform.tag = "Occupied";
                     StationTime.b_occupied = true;
                     waitTime -= Time.deltaTime;
-                    //fillimage.fillAmount = waitTime / Employees_Controller.startTime;
                 }
             }
         }
@@ -71,31 +73,14 @@ public class Patient_Controller : MonoBehaviour
         {
             patient.SetDestination(_waitingRoom.transform.position);
             waitingRoomTime -= Time.deltaTime;
-            //fillimage.fillAmount = waitTime / Employees_Controller.startTime;
-        }
-        if(waitingRoomTime <= 0)
+        }        
+        if (waitingRoomTime <= 0)
         {
             patient.SetDestination(_exit.transform.position);
             b_vaccined = false;
         }
     }
 
-    //public void Contagious()
-    //{
-    //    if (Vector3.Distance(transform.position, sick_patientPos.position) < 3f )
-    //    {
-    //        Instantiate(sick_patient, transform.position, transform.rotation);
-    //        Destroy(this.gameObject);
-    //        //StartCoroutine(Contagiar());
-    //    }
-    //}
-
-    //IEnumerator Contagiar()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //    Instantiate(sick_patient, this.transform.position, this.transform.rotation);
-    //    Destroy(this.gameObject);
-    //}
 
     public void OnTriggerEnter(Collider collision)
     {

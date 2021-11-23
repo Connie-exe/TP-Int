@@ -11,10 +11,15 @@ public class Store_Controller : MonoBehaviour
 
     public static bool inspector_test_done;
     private int cont_loan;
+
+    public static bool b_antiTerremoto;
+    public static bool b_waitingRoom;
     void Start()
     {
         inspector_test_done = false;
         cont_loan = 0;
+        b_antiTerremoto = false;
+        b_waitingRoom = false;
     }
   
     void Update()
@@ -154,6 +159,18 @@ public class Store_Controller : MonoBehaviour
     {
         Time.timeScale = 1f;
         inspector_test_done = true;
+    }
+
+    public void AntiTerremotos()
+    {
+        b_antiTerremoto = true;
+        MoneySystem.cant_founds -= 800;        
+    }
+
+    public void AddWaitingRoom()
+    {
+        b_waitingRoom = true;
+        MoneySystem.cant_founds -= 600;
     }
 
 }

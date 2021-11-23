@@ -21,9 +21,9 @@ public class MoneySystem : MonoBehaviour
     public GameObject panel_bancarrota;
     void Start()
     {
-        txt_vaccined.text = "Vaccined: " + cant_cured;
-        txt_founds.text = "Founds: " + cant_founds;
-        txt_supplies.text = "Supplies: " + cant_vac;
+        txt_vaccined.text = "" + cant_cured;
+        txt_founds.text = "" + cant_founds;
+        txt_supplies.text = "" + cant_vac;
         txt_debt.text = "Debt: " + cant_debt;
         b_loan = false;
         panel_bancarrota.SetActive(false);
@@ -37,9 +37,9 @@ public class MoneySystem : MonoBehaviour
 
     public void PrintData()
     {
-        txt_vaccined.text = "Vaccined " + cant_cured;
-        txt_founds.text = "Founds: " + cant_founds;
-        txt_supplies.text = "Supplies: " + cant_vac;
+        txt_vaccined.text = "" + cant_cured;
+        txt_founds.text = "" + cant_founds;
+        txt_supplies.text = "" + cant_vac;
         txt_debt.text = "Debt: " + cant_debt;
     }
 

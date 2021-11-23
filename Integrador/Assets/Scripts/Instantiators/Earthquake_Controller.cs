@@ -24,13 +24,15 @@ public class Earthquake_Controller : MonoBehaviour
     void Update()
     {
         SpawnCrack();
-        
-        timer -= Time.deltaTime;
+        if(b_isCreated == false && Store_Controller.b_antiTerremoto == false)
+        {
+            timer -= Time.deltaTime;
+        }        
     }
 
     private void SpawnCrack()
     {
-        if (timer <= 0 && b_isCreated == false)
+        if (timer <= 0 && b_isCreated == false && Store_Controller.b_antiTerremoto == false)
         {
             for (int i = 0; i < damage_spots.Length; i++)
             {

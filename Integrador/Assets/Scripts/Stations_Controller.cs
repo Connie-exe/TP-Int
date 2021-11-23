@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stations_Controller : MonoBehaviour
 {
-    private void Awake()
+    private void Update()
     {
         MakeAvailable();
     }
