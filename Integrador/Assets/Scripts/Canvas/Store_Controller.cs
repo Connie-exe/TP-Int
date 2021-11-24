@@ -14,6 +14,8 @@ public class Store_Controller : MonoBehaviour
 
     public static bool b_antiTerremoto;
     public static bool b_waitingRoom;
+
+    public AudioSource audio_chachin;
     void Start()
     {
         inspector_test_done = false;
@@ -43,12 +45,10 @@ public class Store_Controller : MonoBehaviour
     }
 
     public void MoreVaccines()
-    {
-        //if(MoneySystem.cant_founds >= 150)
-        //{
-            MoneySystem.cant_vac++;
-            MoneySystem.cant_founds -= 150;
-        //}
+    {       
+        MoneySystem.cant_vac++;
+        MoneySystem.cant_founds -= 150;
+        CajaCachin();        
     }
 
     public void LoanSelected()
@@ -99,6 +99,7 @@ public class Store_Controller : MonoBehaviour
         {
             Employees_Controller.cant_Nurse++;
             MoneySystem.cant_founds -= 500;
+            CajaCachin();
         }        
     }
 
@@ -111,6 +112,7 @@ public class Store_Controller : MonoBehaviour
             Employees_Controller.b_add_janitor = true;
             Employees_Controller.cont_janitor_active++;
             Evaluation_System.limpieza += 35;
+            CajaCachin();
         }
     }
 
@@ -120,6 +122,7 @@ public class Store_Controller : MonoBehaviour
         {
             Employees_Controller.cant_Publicist++;
             MoneySystem.cant_founds -= 550;
+            CajaCachin();
         }
     }
 
@@ -167,6 +170,7 @@ public class Store_Controller : MonoBehaviour
         b_antiTerremoto = true;
         MoneySystem.cant_founds -= 800;
         Evaluation_System.seguridad += 70;
+        CajaCachin();
     }
 
     public void AddWaitingRoom()
@@ -174,6 +178,7 @@ public class Store_Controller : MonoBehaviour
         b_waitingRoom = true;
         MoneySystem.cant_founds -= 600;
         Evaluation_System.decoración += 50;
+        CajaCachin();
     }
 
     public void AddPlant()
@@ -184,6 +189,7 @@ public class Store_Controller : MonoBehaviour
             MoneySystem.cant_founds -= 90;
             Evaluation_System.b_add_plant = true;
             Evaluation_System.decoración += 10;
+            CajaCachin();
         }
     }
 
@@ -194,7 +200,13 @@ public class Store_Controller : MonoBehaviour
             Evaluation_System.cont_alcoholEnGel++;
             MoneySystem.cant_founds -= 60;
             Evaluation_System.limpieza += 15;
+            CajaCachin();
         }
+    }
+
+    public void CajaCachin()
+    {
+        audio_chachin.Play();
     }
 
 }

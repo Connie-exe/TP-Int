@@ -9,6 +9,10 @@ public class EntertainingChild : MonoBehaviour
     public Text txt_confused;
     public static bool b_confused;
     private int randomnum;
+
+    //public AudioSource audio_caramelo;
+    //public AudioSource audio_juguete;
+    //public AudioSource audio_cantar;
     void Start()
     {
         im_confused.SetActive(false);

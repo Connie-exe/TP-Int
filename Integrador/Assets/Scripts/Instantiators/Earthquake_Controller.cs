@@ -11,6 +11,8 @@ public class Earthquake_Controller : MonoBehaviour
 
     public bool b_isCreated;
     private Shake_Effect shake;
+
+    public AudioSource audio_terremoto;
    
     void Start()
     {
@@ -41,6 +43,7 @@ public class Earthquake_Controller : MonoBehaviour
                 Instantiate(damage, damage_spots[i].position, damage_spots[i].rotation);
                 Evaluation_System.seguridad -= 300;
                 Evaluation_System.decoración -= 100;
+                audio_terremoto.Play();
                 timer = 10;
                 shake.CamShake();
             }

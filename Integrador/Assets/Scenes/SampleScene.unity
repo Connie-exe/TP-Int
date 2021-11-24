@@ -1090,7 +1090,6 @@ GameObject:
   - component: {fileID: 84880692}
   - component: {fileID: 84880691}
   - component: {fileID: 84880690}
-  - component: {fileID: 84880693}
   m_Layer: 5
   m_Name: btn_moreSupplies
   m_TagString: Untagged
@@ -1161,7 +1160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 84880693}
+      - m_Target: {fileID: 1935223606}
         m_MethodName: MoreVaccines
         m_Mode: 1
         m_Arguments:
@@ -1209,19 +1208,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84880688}
   m_CullTransparentMesh: 0
---- !u!114 &84880693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84880688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12aac53d3656b8499c71d8b658df051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop_loan: {fileID: 0}
 --- !u!23 &92263933 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 551204286357340602, guid: fad641749b0f3bc42a6e845a062c98f7,
@@ -1856,6 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &178844173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2070,7 +2057,6 @@ GameObject:
   - component: {fileID: 184496621}
   - component: {fileID: 184496620}
   - component: {fileID: 184496619}
-  - component: {fileID: 184496618}
   m_Layer: 5
   m_Name: btn_morePublicist
   m_TagString: Untagged
@@ -2098,19 +2084,6 @@ RectTransform:
   m_AnchoredPosition: {x: 107.000015, y: -24.694473}
   m_SizeDelta: {x: 30.754456, y: 29.174011}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &184496618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184496616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12aac53d3656b8499c71d8b658df051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop_loan: {fileID: 0}
 --- !u!114 &184496619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,7 +2127,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 184496618}
+      - m_Target: {fileID: 1935223606}
         m_MethodName: AddPublicist
         m_Mode: 1
         m_Arguments:
@@ -2530,6 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!1 &206690562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +2911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &242813414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3233,7 +3208,6 @@ GameObject:
   - component: {fileID: 294192448}
   - component: {fileID: 294192447}
   - component: {fileID: 294192446}
-  - component: {fileID: 294192449}
   m_Layer: 5
   m_Name: btn_moreNurse
   m_TagString: Untagged
@@ -3304,7 +3278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 294192449}
+      - m_Target: {fileID: 1935223606}
         m_MethodName: AddNurse
         m_Mode: 1
         m_Arguments:
@@ -3352,19 +3326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294192444}
   m_CullTransparentMesh: 0
---- !u!114 &294192449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294192444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12aac53d3656b8499c71d8b658df051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop_loan: {fileID: 0}
 --- !u!1 &299109373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &299109376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3676,6 +3638,7 @@ GameObject:
   - component: {fileID: 314205673}
   - component: {fileID: 314205674}
   - component: {fileID: 314205675}
+  - component: {fileID: 314205676}
   m_Layer: 0
   m_Name: MainInstantiator
   m_TagString: ScreenShake
@@ -3750,6 +3713,7 @@ MonoBehaviour:
   - {fileID: 256173038}
   timer: 5
   b_isCreated: 0
+  audio_terremoto: {fileID: 314205676}
 --- !u!114 &314205675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,6 +3727,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camAnim: {fileID: 1687258587}
+--- !u!82 &314205676
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314205670}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1c8c63b9c8687df46921fc2247f63437, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &318028505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,6 +5990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &514220661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6878,6 +6939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &624529012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10879,7 +10941,6 @@ GameObject:
   - component: {fileID: 1129742179}
   - component: {fileID: 1129742178}
   - component: {fileID: 1129742177}
-  - component: {fileID: 1129742180}
   m_Layer: 5
   m_Name: btn_moreJanitor
   m_TagString: Untagged
@@ -10950,7 +11011,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129742180}
+      - m_Target: {fileID: 1935223606}
         m_MethodName: AddJanitor
         m_Mode: 1
         m_Arguments:
@@ -10998,19 +11059,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129742175}
   m_CullTransparentMesh: 0
---- !u!114 &1129742180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129742175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12aac53d3656b8499c71d8b658df051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop_loan: {fileID: 0}
 --- !u!1 &1129791991
 GameObject:
   m_ObjectHideFlags: 0
@@ -12521,6 +12569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &1303876913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13394,6 +13443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!1 &1372366968
 GameObject:
   m_ObjectHideFlags: 0
@@ -17623,6 +17673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &1819724848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18458,6 +18509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &1934264703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18574,6 +18626,7 @@ GameObject:
   - component: {fileID: 1935223601}
   - component: {fileID: 1935223606}
   - component: {fileID: 1935223605}
+  - component: {fileID: 1935223607}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -18699,6 +18752,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 1935223607}
+--- !u!82 &1935223607
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935223600}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 51f7a9c2840c2ad46aeb950fc5211c58, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1935571898
 GameObject:
   m_ObjectHideFlags: 0
@@ -18752,6 +18902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &1935571901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19946,6 +20097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 0}
+  audio_chachin: {fileID: 0}
 --- !u!114 &2078939566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20294,6 +20446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop_loan: {fileID: 2085683857}
+  audio_chachin: {fileID: 0}
 --- !u!1 &2087906525
 GameObject:
   m_ObjectHideFlags: 0

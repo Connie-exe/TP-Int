@@ -11,6 +11,9 @@ public class VacApplication_Children : MonoBehaviour
     public float timer;
     private float waitTime;
     public Text txt_cryingbaby;
+
+    public AudioSource audio_bebeRiendo;
+    public AudioSource audio_bebeLlorando;
     void Start()
     {
         txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
@@ -40,6 +43,7 @@ public class VacApplication_Children : MonoBehaviour
             MoneySystem.cant_vac--;
             MoneySystem.cant_cured++;
             txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+            audio_bebeRiendo.Play();
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());           
         }
@@ -48,6 +52,7 @@ public class VacApplication_Children : MonoBehaviour
             MoneySystem.cant_vac--;
             txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
             txt_cryingbaby.text = "Oh no! El infante no permitió que le pusieras la vacuna porque no lo has distraido de forma correcta.";
+            audio_bebeLlorando.Play();
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());
         }

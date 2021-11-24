@@ -24,6 +24,7 @@ public class Sintomas : MonoBehaviour
 
     public static float probabilidades_escondidas = 0f;
     public float peek;
+    
     void Start()
     {
         txt_temperatura.text = "";
