@@ -16,6 +16,7 @@ public class Patient_COVID : MonoBehaviour
     {
         COVID_Patient = GetComponent<NavMeshAgent>();
         destination = new Vector3(UnityEngine.Random.Range(-10, 12), 1, UnityEngine.Random.Range(-12, 9));
+        Evaluation_System.limpieza -= 50;
         COVID_Counter.cont++;
         //b_isCreated = false;
     }
@@ -73,6 +74,7 @@ public class Patient_COVID : MonoBehaviour
         MoneySystem.cant_founds += 200;
         COVID_Counter.cont--;
         Destroy(gameObject);
+        Evaluation_System.limpieza += 60;
     }
 
 

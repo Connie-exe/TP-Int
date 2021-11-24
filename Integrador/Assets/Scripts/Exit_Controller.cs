@@ -13,6 +13,7 @@ public class Exit_Controller : MonoBehaviour
                 MoneySystem.cant_cured++;
                 MoneySystem.cant_vac--;
                 MoneySystem.cant_founds += 100;
+                Evaluation_System.limpieza += 60;
             }
             Destroy(collision.gameObject);//se destruye el objeto con el que se colisiona
         }

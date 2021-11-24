@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Janitor_Controller : MonoBehaviour
 {
     internal GameObject closest_dirt;
+    internal GameObject closest_plant;
     internal NavMeshAgent janitor;
     internal Vector3 destination;
     public float destinationTime = 4;
@@ -16,7 +17,8 @@ public class Janitor_Controller : MonoBehaviour
     }
     void Update()
     {
-        FindClosestAlly();
+        FindClosestDirt();
+        FindClosestPlant();
         FollowingBehaviour();
     }
 
@@ -25,9 +27,10 @@ public class Janitor_Controller : MonoBehaviour
         if (other.gameObject.CompareTag("Dirt"))
         {
             Destroy(other.gameObject);
-        }
+            Evaluation_System.limpieza += 10;
+        }       
     }
-    public GameObject FindClosestAlly()
+    public GameObject FindClosestDirt()
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("Dirt");
@@ -47,11 +50,35 @@ public class Janitor_Controller : MonoBehaviour
         return closest_dirt;
     }
 
+    public GameObject FindClosestPlant()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Plant");
+        closest_plant = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest_plant = go;
+                distance = curDistance;
+            }
+        }
+        return closest_plant;
+    }
+
     private void FollowingBehaviour()
     {
         if (closest_dirt != null)
         {
             janitor.SetDestination(closest_dirt.transform.position);
+        }
+        else if(Plants_Controller.b_needWater == true)
+        {
+            janitor.SetDestination(closest_plant.transform.position);
         }
         else
         {

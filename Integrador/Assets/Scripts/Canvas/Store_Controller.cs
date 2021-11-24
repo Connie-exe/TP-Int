@@ -110,6 +110,7 @@ public class Store_Controller : MonoBehaviour
             MoneySystem.cant_founds -= 450;
             Employees_Controller.b_add_janitor = true;
             Employees_Controller.cont_janitor_active++;
+            Evaluation_System.limpieza += 35;
         }
     }
 
@@ -164,13 +165,36 @@ public class Store_Controller : MonoBehaviour
     public void AntiTerremotos()
     {
         b_antiTerremoto = true;
-        MoneySystem.cant_founds -= 800;        
+        MoneySystem.cant_founds -= 800;
+        Evaluation_System.seguridad += 70;
     }
 
     public void AddWaitingRoom()
     {
         b_waitingRoom = true;
         MoneySystem.cant_founds -= 600;
+        Evaluation_System.decoración += 50;
+    }
+
+    public void AddPlant()
+    {
+        if (Evaluation_System.cont_plant_onMap <= Evaluation_System.max_plants)
+        {
+            Evaluation_System.cont_plant_onMap++;
+            MoneySystem.cant_founds -= 90;
+            Evaluation_System.b_add_plant = true;
+            Evaluation_System.decoración += 10;
+        }
+    }
+
+    public void AddAlcoholEnGel()
+    {
+        if(Evaluation_System.cont_alcoholEnGel <= 2)
+        {
+            Evaluation_System.cont_alcoholEnGel++;
+            MoneySystem.cant_founds -= 60;
+            Evaluation_System.limpieza += 15;
+        }
     }
 
 }
