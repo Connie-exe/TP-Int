@@ -8,6 +8,7 @@ public class Instructions : MonoBehaviour
 {
     public Text txt_notif;
     public GameObject notif_decor;
+    public GameObject doctora_triste;
     public GameObject btn_CloseNotif;
     public bool b_covid_notif;
     public GameObject covid_patient;
@@ -49,7 +50,9 @@ public class Instructions : MonoBehaviour
         panel_warning.SetActive(false);
         panel_LevelUp.SetActive(false);
         txt_explanation.text = "";
-        txt_explanation1.text = "";       
+        txt_explanation1.text = "";
+
+        doctora_triste.SetActive(false);
     }
 
     
@@ -73,6 +76,7 @@ public class Instructions : MonoBehaviour
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! This patient has COVID. Click on them to send them home or they're gonna spread the disease.";
             notif_decor.SetActive(true);
+            doctora_triste.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_covid_notif = true;
             StartCoroutine(Notifs());
@@ -87,6 +91,7 @@ public class Instructions : MonoBehaviour
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! There has been an earthquake! Click on the cracks on the floor to repair them!";
             notif_decor.SetActive(true);
+            doctora_triste.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_crack_notif = true;
             StartCoroutine(Notifs());
@@ -100,6 +105,7 @@ public class Instructions : MonoBehaviour
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "The inspector has arrived! Click on them to have a quick test. It will reward you!";
             notif_decor.SetActive(true);
+            doctora_triste.SetActive(false);
             btn_CloseNotif.SetActive(true);
             b_inspector_notif = true;
             StartCoroutine(Notifs());
@@ -113,6 +119,7 @@ public class Instructions : MonoBehaviour
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! Our numbers are nearly in red! You can ask for a loan to the government at the store.";
             notif_decor.SetActive(true);
+            doctora_triste.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_founds_notif = true;
             StartCoroutine(Notifs());
@@ -126,6 +133,7 @@ public class Instructions : MonoBehaviour
         {
             txt_notif.gameObject.SetActive(true);
             notif_decor.SetActive(true);
+            doctora_triste.SetActive(false);
             btn_CloseNotif.SetActive(true);
             txt_notif.text = "Look! The yellow one it's a VIP patient. If you click on them before the bar runs out they will donate supplies!";
             b_VIP_notif = true;
