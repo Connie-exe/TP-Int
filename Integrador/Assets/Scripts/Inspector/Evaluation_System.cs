@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Evaluation_System : MonoBehaviour
 {
-    public static int decoración;
-    public static int limpieza;
-    public static int seguridad;
+    public static int decoración = 50;
+    public static int limpieza = 50;
+    public static int seguridad = 50;
     public float EvGral;
 
     public Text txt_decoración;
@@ -23,17 +23,26 @@ public class Evaluation_System : MonoBehaviour
     public static int cont_alcoholEnGel;
     void Start()
     {
+
         max_plants = plants.Length;
-        txt_decoración.text = "Decoración:" + decoración;
-        txt_limpieza.text = "Limpieza: " + limpieza;
-        txt_seguridad.text = "Seguridad: " + seguridad;
+        txt_decoración.text = "Decoration:" + decoración;
+        txt_limpieza.text = "Higiene: " + limpieza;
+        txt_seguridad.text = "Security: " + seguridad;
     }
 
     // Update is called once per frame
     void Update()
     {
+        PrintData();
         PlantsOnMap();
-        ClinicLevel();
+        ClinicLevel();       
+    }
+
+    public void PrintData()
+    {
+        txt_decoración.text = "Decoration:" + decoración;
+        txt_limpieza.text = "Higiene: " + limpieza;
+        txt_seguridad.text = "Security: " + seguridad;
     }
 
     public void PlantsOnMap()
@@ -48,18 +57,6 @@ public class Evaluation_System : MonoBehaviour
     public void ClinicLevel()
     {
         EvGral = (decoración + limpieza + seguridad) / 3;
-        txt_EvGral.text = "Nivel del Hospital: " + EvGral;
-        //switch (EvGral)
-        //{
-        //    case <= 4:
-        //        txt_EvGral.text = "Malo";
-        //            break;
-        //    case >= 6:
-        //        txt_EvGral.text = "Bueno";
-        //        break;                
-        //    default:
-        //        txt_EvGral.text = "Normal";
-        //        break;
-        //}
+        txt_EvGral.text = "Nivel del Hospital: " + EvGral;        
     }
 }

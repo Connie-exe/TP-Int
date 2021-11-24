@@ -22,6 +22,8 @@ public class Crack_Controller : MonoBehaviour
             MoneySystem.cant_founds -= 500;
             cont_damage--;            
             Destroy(gameObject);
+            Evaluation_System.seguridad += 100;
+            Evaluation_System.decoración += 40;
         }
     }
 }

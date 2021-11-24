@@ -39,6 +39,8 @@ public class Earthquake_Controller : MonoBehaviour
 
                 //Vector3 transform = new Vector3(dirt_spots[i].position.x, dirt_spots[i].position.y, dirt_spots[i].position.z);
                 Instantiate(damage, damage_spots[i].position, damage_spots[i].rotation);
+                Evaluation_System.seguridad -= 300;
+                Evaluation_System.decoración -= 100;
                 timer = 10;
                 shake.CamShake();
             }
