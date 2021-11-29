@@ -13,8 +13,8 @@ public class VacApplication : MonoBehaviour
     private float waitTime;
     void Start()
     {
-        txt_founds.text = "Founds: " + MoneySystem.cant_founds;
-        txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+        txt_founds.text = "" + MoneySystem.cant_founds;
+        txt_supplies.text = "" + MoneySystem.cant_vac;
         waitTime = timer;
         //fillimage = GetComponent<Image>();
     }
@@ -41,15 +41,15 @@ public class VacApplication : MonoBehaviour
             MoneySystem.cant_founds += 300;
             MoneySystem.cant_vac--;
             MoneySystem.cant_cured++;
-            txt_founds.text = "Founds: " + MoneySystem.cant_founds;
-            txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+            txt_founds.text = "" + MoneySystem.cant_founds;
+            txt_supplies.text = "" + MoneySystem.cant_vac;
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());
             if(VIP_Controller.b_isVIP == true)
             {
                 //Instructions.b_VIP_achievement = true;
                 MoneySystem.cant_vac += 5;
-                txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+                txt_supplies.text = "" + MoneySystem.cant_vac;
                 MoneySystem.cant_cured++;
             }
         }
