@@ -16,7 +16,7 @@ public class VacApplication_Children : MonoBehaviour
     public AudioSource audio_bebeLlorando;
     void Start()
     {
-        txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+        txt_supplies.text = "" + MoneySystem.cant_vac;
         waitTime = timer;
         //fillimage = GetComponent<Image>();
     }
@@ -42,7 +42,7 @@ public class VacApplication_Children : MonoBehaviour
         {           
             MoneySystem.cant_vac--;
             MoneySystem.cant_cured++;
-            txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+            txt_supplies.text = "" + MoneySystem.cant_vac;
             audio_bebeRiendo.Play();
             Destroy(other.gameObject);
             StartCoroutine(BackToGame());           
@@ -50,7 +50,7 @@ public class VacApplication_Children : MonoBehaviour
         if (other.gameObject.CompareTag("Vaccine") && EntertainingChild.b_confused == false)
         {
             MoneySystem.cant_vac--;
-            txt_supplies.text = "Supplies: " + MoneySystem.cant_vac;
+            txt_supplies.text = "" + MoneySystem.cant_vac;
             txt_cryingbaby.text = "Oh no! El infante no permitió que le pusieras la vacuna porque no lo has distraido de forma correcta.";
             audio_bebeLlorando.Play();
             Destroy(other.gameObject);
@@ -60,7 +60,7 @@ public class VacApplication_Children : MonoBehaviour
 
     IEnumerator BackToGame()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("SampleScene");
     }
 }
