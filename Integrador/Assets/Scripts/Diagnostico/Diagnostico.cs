@@ -25,7 +25,7 @@ public class Diagnostico : MonoBehaviour
     void Update()
     {
         txt_probabilidades.text = "Probabilidades de COVID: " + probabilidades + " %";
-        txt_founds.text = "$ " + MoneySystem.cant_founds;
+        txt_founds.text = "" + MoneySystem.cant_founds;
         Desicion();
     }
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -218,8 +218,8 @@ RectTransform:
   - {fileID: 516130887}
   - {fileID: 1650468847}
   - {fileID: 985923648}
-  - {fileID: 965100961}
   - {fileID: 2024246818}
+  - {fileID: 965100961}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1153,7 +1153,7 @@ RectTransform:
   m_Children:
   - {fileID: 1543024623}
   m_Father: {fileID: 73725292}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1976,7 +1976,7 @@ GameObject:
   - component: {fileID: 2024246820}
   - component: {fileID: 2024246819}
   m_Layer: 5
-  m_Name: Image
+  m_Name: im_supplies_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1994,11 +1994,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 73725292}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314.6, y: 176.51}
+  m_AnchoredPosition: {x: 295.67, y: 176.51}
   m_SizeDelta: {x: 62.09697, y: 62.803467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024246819
