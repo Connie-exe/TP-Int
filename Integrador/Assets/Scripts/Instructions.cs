@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Instructions : MonoBehaviour
 {
+    public bool b_notif;
+    
     public Text txt_notif;
     public GameObject notif_decor;
     public GameObject doctora_triste;
@@ -33,6 +35,8 @@ public class Instructions : MonoBehaviour
 
     void Start()
     {
+        b_notif = false;
+        
         txt_notif.text = "";
         notif_decor.SetActive(false);
         btn_CloseNotif.SetActive(false);
@@ -75,7 +79,7 @@ public class Instructions : MonoBehaviour
     public void CovidNotif()
     {
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
-        if (covid_patient == true && b_covid_notif == false)
+        if (covid_patient == true && b_covid_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! This patient has COVID. Click on them to send them home or they're gonna spread the disease.";
@@ -83,14 +87,15 @@ public class Instructions : MonoBehaviour
             doctora_triste.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_covid_notif = true;
-            StartCoroutine(Notifs());
+            b_notif = true;
+            StartCoroutine(Notifs());            
         }
     }
 
     public void CrackNotif()
     {
         cracks = GameObject.FindGameObjectWithTag("Crack");        
-        if (cracks == true && b_crack_notif == false)
+        if (cracks == true && b_crack_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! There has been an earthquake! Click on the cracks on the floor to repair them!";
@@ -98,13 +103,14 @@ public class Instructions : MonoBehaviour
             doctora_terremoto.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_crack_notif = true;
+            b_notif = true;
             StartCoroutine(Notifs());
         }
     }
 
     public void InspectorNotif()
     {
-        if (Inspector_Instantiator.b_isCreated == true && b_inspector_notif == false)
+        if (Inspector_Instantiator.b_isCreated == true && b_inspector_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "The inspector has arrived! Click on them to have a quick test. It will reward you!";
@@ -112,13 +118,14 @@ public class Instructions : MonoBehaviour
             doctora_feliz.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_inspector_notif = true;
+            b_notif = true;
             StartCoroutine(Notifs());
         }
     }
 
     public void FoundsNotif()
     {
-        if (MoneySystem.cant_founds <= 0 && b_founds_notif == false)
+        if (MoneySystem.cant_founds <= 0 && b_founds_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "Oh no! Our numbers are nearly in red! You can ask for a loan to the government at the store.";
@@ -126,6 +133,7 @@ public class Instructions : MonoBehaviour
             doctora_triste.SetActive(true);
             btn_CloseNotif.SetActive(true);
             b_founds_notif = true;
+            b_notif = true;
             StartCoroutine(Notifs());
         }
     }
@@ -133,7 +141,7 @@ public class Instructions : MonoBehaviour
     public void VIPNotif()
     {
         VIP_Patient = GameObject.FindGameObjectWithTag("VIP_patient");
-        if (VIP_Patient == true && b_VIP_notif == false)
+        if (VIP_Patient == true && b_VIP_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             notif_decor.SetActive(true);
@@ -141,6 +149,7 @@ public class Instructions : MonoBehaviour
             btn_CloseNotif.SetActive(true);
             txt_notif.text = "Look! The yellow one it's a VIP patient. If you click on them before the bar runs out they will donate supplies!";
             b_VIP_notif = true;
+            b_notif = true;
             StartCoroutine(Notifs());
         }
     }
@@ -153,6 +162,7 @@ public class Instructions : MonoBehaviour
         doctora_triste.SetActive(false);
         doctora_terremoto.SetActive(false);
         txt_notif.text = "";
+        b_notif = false;
     }
 
 
