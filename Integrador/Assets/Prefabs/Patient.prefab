@@ -154,9 +154,7 @@ MonoBehaviour:
   - {fileID: 7146354262617615865, guid: c9860ff844604ac47b494dc91cbed468, type: 3}
   - {fileID: 6807418893358207130, guid: 641ce1ba7bcc0c0489a0dd74124986b1, type: 3}
   - {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
-  _waitingRoom: {fileID: 551204286357340604, guid: fad641749b0f3bc42a6e845a062c98f7,
-    type: 3}
-  _waitRoomTint: {fileID: 551204286357340602, guid: fad641749b0f3bc42a6e845a062c98f7,
+  _waitingRoom: {fileID: 2207916434358563324, guid: d1932d23fc534604686623066024715c,
     type: 3}
   _exit: {fileID: 7092674980109697205, guid: 3826632bc4979f141a57a864cd3c7984, type: 3}
   cont_station: 0
