@@ -14,6 +14,8 @@ public class Diagnostico : MonoBehaviour
 
     public GameObject panel_afterDesicion;
     public Text txt_result;
+
+    public AudioSource audio_celebrando;
     void Start()
     {        
         btn_desicion.enabled = false;
@@ -49,6 +51,7 @@ public class Diagnostico : MonoBehaviour
         {
             txt_result.text = "Buen trabajo! Ese paciente no tenía COVID, el gobierno te recompensará con $500";
             MoneySystem.cant_founds += 500;
+            audio_celebrando.Play();
         }
         StartCoroutine(BackToGame());
     }
@@ -64,6 +67,7 @@ public class Diagnostico : MonoBehaviour
         {
             txt_result.text = "Buen trabajo! Ahora el paciente podrá cuidarse a sí mismo y a los demás. Justo a tiempo! El gobierno te recompensará con $1000";
             MoneySystem.cant_founds += 1000;
+            audio_celebrando.Play();
         }
         else
         {

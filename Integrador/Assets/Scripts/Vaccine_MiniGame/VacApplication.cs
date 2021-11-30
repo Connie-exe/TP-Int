@@ -11,6 +11,8 @@ public class VacApplication : MonoBehaviour
     public Image fillimage;
     public float timer;
     private float waitTime;
+
+    public AudioSource audio_celebrando;
     void Start()
     {
         txt_founds.text = "" + MoneySystem.cant_founds;
@@ -52,6 +54,7 @@ public class VacApplication : MonoBehaviour
                 txt_supplies.text = "" + MoneySystem.cant_vac;
                 MoneySystem.cant_cured++;
             }
+            audio_celebrando.Play();
         }
     }
 

@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Crack_Controller : MonoBehaviour
 {
-    public static int cont_damage;    
+    public static int cont_damage;
+    public AudioSource audio_crackRepair;
+    public Renderer rend;
     private void Start()
     {
         cont_damage = Earthquake_Controller.cant_damageSpots;
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
     }
 
     void Update()
@@ -17,13 +21,12 @@ public class Crack_Controller : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if(MoneySystem.cant_founds >= 500)
-        {
-            MoneySystem.cant_founds -= 500;
-            cont_damage--;            
-            Destroy(gameObject);
-            Evaluation_System.seguridad += 100;
-            Evaluation_System.decoración += 40;
-        }
+        rend.enabled = false;
+        audio_crackRepair.Play();
+        MoneySystem.cant_founds -= 500;
+        cont_damage--;            
+        Destroy(this.gameObject, audio_crackRepair.clip.length);
+        Evaluation_System.seguridad += 100;
+        Evaluation_System.decoración += 40;            
     }
 }

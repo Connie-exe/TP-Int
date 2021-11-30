@@ -24,6 +24,9 @@ public class Sintomas : MonoBehaviour
 
     public static float probabilidades_escondidas = 0f;
     public float peek;
+
+    public AudioSource audio_palilloLengua;
+    public AudioSource audio_termometro;
     
     void Start()
     {
@@ -53,7 +56,8 @@ public class Sintomas : MonoBehaviour
         {
             //Debug.Log("entro collider");
             if(this.gameObject.name == "Termometro" && b_temperatura == false)
-            {                
+            {
+                audio_termometro.Play();
                 temperature = Random.Range(37.5f, 39.6f);
                 temperature = System.Math.Round(temperature, 2);
                 Debug.Log(temperature);
@@ -63,6 +67,7 @@ public class Sintomas : MonoBehaviour
             }
             if(this.gameObject.name == "Palillo de Lengua" && b_throatache == false)
             {
+                audio_palilloLengua.Play();
                 throatache = Random.Range(1, 4);
                 CheckThroatache();
                 b_throatache = true;
