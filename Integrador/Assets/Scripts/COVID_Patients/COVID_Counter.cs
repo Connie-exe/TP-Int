@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class COVID_Counter : MonoBehaviour
 {
     //private List<GameObject> sick_patients = new List<GameObject>();
-    public static int cont;
+    public static int cont = 0;
     public Text txt_cont;
     void Start()
-    {
-        cont = 0;
+    {        
         txt_cont.text = "0/4";
     }   
     void Update()

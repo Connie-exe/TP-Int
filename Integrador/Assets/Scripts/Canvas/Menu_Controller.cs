@@ -26,6 +26,7 @@ public class Menu_Controller : MonoBehaviour
         MoneySystem.cant_debt = 0;
         MoneySystem.cant_founds = 1000;
         MoneySystem.cant_vac = 5;
+        COVID_Counter.cont = 0;
     }
 
     public void QuitGame()
