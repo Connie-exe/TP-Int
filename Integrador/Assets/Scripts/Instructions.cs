@@ -27,6 +27,9 @@ public class Instructions : MonoBehaviour
     public bool b_inspector_notif;
     public bool b_founds_notif;
 
+    public GameObject protestantes;
+    public bool b_protestantes_notif;
+
     public GameObject panel_warning;
     public Text txt_explanation;
     public Text txt_explanation1;
@@ -51,6 +54,10 @@ public class Instructions : MonoBehaviour
         VIP_Patient = GameObject.FindGameObjectWithTag("VIP_Patient");
         b_VIP_notif = false;
 
+        protestantes = GameObject.FindGameObjectWithTag("Protest");
+        b_protestantes_notif = false;
+
+        inspector = GameObject.FindGameObjectWithTag("Inspector");
         b_inspector_notif = false;
         b_founds_notif = false;
 
@@ -67,6 +74,7 @@ public class Instructions : MonoBehaviour
     
     void LateUpdate()
     {
+        ProtestNotif();
         CovidNotif();
         CrackNotif();
         InspectorNotif();
@@ -77,6 +85,21 @@ public class Instructions : MonoBehaviour
         Winner();
     }
 
+    public void ProtestNotif()
+    {
+        protestantes = GameObject.FindGameObjectWithTag("Protest");
+        if (protestantes == true && b_protestantes_notif == false && b_notif == false)
+        {
+            txt_notif.gameObject.SetActive(true);
+            txt_notif.text = "Oh no! Some protesters have taken over the entry of the hospital! Hire a security guard to tell to leave!";
+            notif_decor.SetActive(true);
+            doctora_triste.SetActive(true);
+            btn_CloseNotif.SetActive(true);
+            b_protestantes_notif = true;
+            b_notif = true;
+            StartCoroutine(Notifs());
+        }
+    }
     public void CovidNotif()
     {
         covid_patient = GameObject.FindGameObjectWithTag("COVID_Patient");
@@ -111,7 +134,7 @@ public class Instructions : MonoBehaviour
 
     public void InspectorNotif()
     {
-        inspector = GameObject.Find("Inspector");
+        inspector = GameObject.FindGameObjectWithTag("Inspector");
         if (inspector == true && b_inspector_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
@@ -175,7 +198,7 @@ public class Instructions : MonoBehaviour
             panel_warning.SetActive(true);
             _explanation = "You ran out of vaccines, buy some more at the store";
             txt_explanation.text = "" + _explanation;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
     }
 
