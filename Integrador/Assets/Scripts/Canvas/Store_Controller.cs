@@ -169,7 +169,7 @@ public class Store_Controller : MonoBehaviour
     {
         MoneySystem.cant_founds += 700;
         MoneySystem.cant_debt = 0;
-        inspector_test_done = true;
+        inspector_test_done = true;        
     }
 
     public void CloseTest()

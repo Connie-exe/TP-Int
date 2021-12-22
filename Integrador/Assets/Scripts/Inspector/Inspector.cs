@@ -10,6 +10,8 @@ public class Inspector : MonoBehaviour
     internal NavMeshAgent _inspector;
     internal Vector3 destination;
     public float destinationTime = 4;
+
+    public static int q_selected;
     private void Start()
     {
         b_inspector_test = false;
@@ -34,8 +36,9 @@ public class Inspector : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         b_inspector_test = true;
+        q_selected = Random.Range(0,3);        
         Destroy(this.gameObject);
     }
 }
