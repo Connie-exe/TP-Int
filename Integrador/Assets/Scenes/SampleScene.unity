@@ -5342,7 +5342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a385e1e22380043b34535bc888df24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirt: {fileID: 49181027053237724, guid: 8a604b8f5303d6b418412ae8289f3d98, type: 3}
+  dirt: {fileID: 3598145539859960656, guid: e4ac53a494c1527419c658179b6a73b7, type: 3}
   dirt_spots:
   - {fileID: 377744715}
   - {fileID: 2123127919}
@@ -22088,6 +22088,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1095335566}
     m_Modifications:
+    - target: {fileID: 79158868079685736, guid: d1932d23fc534604686623066024715c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2207916434358563324, guid: d1932d23fc534604686623066024715c,
         type: 3}
       propertyPath: m_Name
