@@ -16,21 +16,29 @@ public class Employees_Controller : MonoBehaviour
     public static int max_Publicist = 2;
     public static float intantiator_timer;
 
+    public static bool b_security = false;
+    public static int cant_Security = 0;
+    public static int max_Security = 1;
+
     public Text txt_nurseInfo;
     public Text txt_JanitorInfo;
     public Text txt_PublicistInfo;
+    public Text txt_SecurityInfo;
 
     public GameObject[] janitor;
     public static bool b_add_janitor;
     public static int cont_janitor_active = -1;
+
+    public GameObject security;
     void Start()
-    {
+    { 
         txt_nurseInfo.text = "";
         txt_JanitorInfo.text = "";
         txt_PublicistInfo.text = "";
+        txt_SecurityInfo.text = "";
         startTime = 5f;
         intantiator_timer = 7f;
-        b_add_janitor = false;
+        b_add_janitor = false;  
     }
 
     // Update is called once per frame
@@ -41,13 +49,15 @@ public class Employees_Controller : MonoBehaviour
         NurseInfo();
         JanitorInfo();
         PublicistInfo();
+        SecurityInfo();
         ActiveJanitor();
+        ActveSecurity();
     }
 
     public void SetTime()
     {
-        if(Protesta_Controller.b_protesta == false)
-        {
+        //if(Protesta_Controller.b_protesta == false)
+        //{
             if (cant_Nurse == 0)
             {
                 startTime = 5f;
@@ -64,7 +74,7 @@ public class Employees_Controller : MonoBehaviour
             {
                 startTime = 1.5f;
             }
-        }     
+        //}     
     }
 
     public void SetTimeInstantiator()
@@ -98,6 +108,11 @@ public class Employees_Controller : MonoBehaviour
         txt_PublicistInfo.text = cant_Publicist + "/" + max_Publicist;
     }
 
+    public void SecurityInfo()
+    {
+        txt_SecurityInfo.text = cant_Security + "/" + max_Security;  
+    }
+
     public void ActiveJanitor()
     {
         if(b_add_janitor == true)
@@ -105,5 +120,13 @@ public class Employees_Controller : MonoBehaviour
             janitor[cont_janitor_active].SetActive(true);
         }
         b_add_janitor = false;
+    }
+
+    public void ActveSecurity()
+    {
+        if(b_security == true)
+        {
+            security.SetActive(true);
+        }
     }
 }

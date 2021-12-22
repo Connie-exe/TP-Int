@@ -126,6 +126,19 @@ public class Store_Controller : MonoBehaviour
         }
     }
 
+    public void AddSecurity()
+    {
+        if(Employees_Controller.b_security == false)
+        {
+            Employees_Controller.b_security = true;
+            Debug.Log(" " + Employees_Controller.b_security);
+            Employees_Controller.cant_Security++;
+            MoneySystem.cant_founds -= 600;
+            Evaluation_System.seguridad += 70;
+            CajaCachin();
+        }
+    }
+
     public void PayDebt()
     {
         if(MoneySystem.cant_founds >= MoneySystem.cant_debt)
@@ -169,7 +182,7 @@ public class Store_Controller : MonoBehaviour
     {
         b_antiTerremoto = true;
         MoneySystem.cant_founds -= 800;
-        Evaluation_System.seguridad += 70;
+        Evaluation_System.seguridad += 100;
         CajaCachin();
     }
 
@@ -177,7 +190,7 @@ public class Store_Controller : MonoBehaviour
     {
         b_waitingRoom = true;
         MoneySystem.cant_founds -= 600;
-        Evaluation_System.decoración += 50;
+        Evaluation_System.decoración += 100;
         CajaCachin();
     }
 
@@ -188,7 +201,7 @@ public class Store_Controller : MonoBehaviour
             Evaluation_System.cont_plant_onMap++;
             MoneySystem.cant_founds -= 90;
             Evaluation_System.b_add_plant = true;
-            Evaluation_System.decoración += 10;
+            Evaluation_System.decoración += 15;
             CajaCachin();
         }
     }

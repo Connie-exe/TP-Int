@@ -90,7 +90,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16665052453961896}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -224,7 +224,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653415711548459417}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -358,7 +358,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985752165320313735}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -416,11 +416,10 @@ GameObject:
   - component: {fileID: 686670316245586217}
   - component: {fileID: 81232087039304968}
   - component: {fileID: 6785047269501506525}
-  - component: {fileID: 3740529553701664301}
   - component: {fileID: 2041004293480211944}
   m_Layer: 0
   m_Name: Protestantes
-  m_TagString: Patient
+  m_TagString: Protest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +498,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363576531710132019}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -543,19 +542,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3740529553701664301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4363576531710132019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e4fc70df8bc014f8d7b1af893dd596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationTime: 4
 --- !u!114 &2041004293480211944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f93a9913eda9549a05dd4a42d466e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiator: {fileID: 0}
+  main_instantiator: {fileID: 0}
 --- !u!1 &8404066359813797145
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +645,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8404066359813797145}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -793,7 +779,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8757242936796688692}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2

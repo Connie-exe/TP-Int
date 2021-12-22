@@ -5,13 +5,13 @@ using UnityEngine;
 public class Intantiator_Controller : MonoBehaviour
 {
     public List<GameObject> patients;
-    public GameObject instantiatePos;
+    public GameObject instantiatePos;   
     public float timer;
     private int cont = 0;
     //private float time = 0;
     void Start()
-    {
-        timer = Employees_Controller.intantiator_timer;
+    {       
+        timer = Employees_Controller.intantiator_timer;        
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Intantiator_Controller : MonoBehaviour
             Vector3 transform = new Vector3(offsetX, instantiatePos.transform.position.y, instantiatePos.transform.position.z);//aquí se declara la nueva posición del instantiate en el entorno 3d de unity
             Instantiate(patients[rnd], transform, Quaternion.identity);//esto permite que los enemigos spwneen en random lugares sin repetición
             cont++;
-            timer = Employees_Controller.intantiator_timer;
+            timer = Employees_Controller.intantiator_timer;               
         }
     }
 }

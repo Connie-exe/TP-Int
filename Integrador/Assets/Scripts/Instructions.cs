@@ -23,6 +23,7 @@ public class Instructions : MonoBehaviour
     public bool b_VIP_notif;
     public GameObject VIP_Patient;
 
+    public GameObject inspector;
     public bool b_inspector_notif;
     public bool b_founds_notif;
 
@@ -110,7 +111,8 @@ public class Instructions : MonoBehaviour
 
     public void InspectorNotif()
     {
-        if (Inspector_Instantiator.b_isCreated == true && b_inspector_notif == false && b_notif == false)
+        inspector = GameObject.Find("Inspector");
+        if (inspector == true && b_inspector_notif == false && b_notif == false)
         {
             txt_notif.gameObject.SetActive(true);
             txt_notif.text = "The inspector has arrived! Click on them to have a quick test. It will reward you!";

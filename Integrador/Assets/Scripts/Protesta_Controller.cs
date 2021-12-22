@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Protesta_Controller : MonoBehaviour
 {
-
-    public static bool b_protesta;
+    public GameObject main_instantiator;
     void Start()
     {
-        b_protesta = false;
+        main_instantiator = GameObject.Find("MainInstantiator");
+        main_instantiator.SetActive(false);
+        Evaluation_System.seguridad -= 100;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnTriggerEnter(Collider other)
+    {       
+        if (other.gameObject.CompareTag("Security"))
+        {
+            main_instantiator.SetActive(true);
+            Destroy(this.gameObject);
+            Evaluation_System.seguridad += 150;
+
+        }
     }
 }
