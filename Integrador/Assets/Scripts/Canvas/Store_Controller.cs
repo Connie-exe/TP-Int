@@ -172,6 +172,12 @@ public class Store_Controller : MonoBehaviour
         inspector_test_done = true;        
     }
 
+    public void FailedInspector()
+    {
+        MoneySystem.cant_founds -= 100;
+        inspector_test_done = true;
+    }
+
     public void CloseTest()
     {
         Time.timeScale = 1f;
