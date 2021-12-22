@@ -22,6 +22,10 @@ public class Menu_Controller : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
+        MoneySystem.cant_cured = 0;
+        MoneySystem.cant_debt = 0;
+        MoneySystem.cant_founds = 1000;
+        MoneySystem.cant_vac = 5;
     }
 
     public void QuitGame()

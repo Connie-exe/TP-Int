@@ -20,11 +20,7 @@ public class MoneySystem : MonoBehaviour
 
     public GameObject panel_bancarrota;
     void Start()
-    {
-        cant_founds = 1000;
-        cant_cured = 0;
-        cant_vac = 5;
-        cant_debt = 0;
+    {     
         txt_vaccined.text = "" + cant_cured;
         txt_founds.text = "" + cant_founds;
         txt_supplies.text = "" + cant_vac;
